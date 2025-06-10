@@ -1,0 +1,554 @@
+header {
+  background-color: #0a1a44; /* Navy Blue */
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 40px;
+  background-color: white;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  line-height: 1.4;
+}
+
+.highlight {
+  color: #4263eb;
+  font-weight: bold;
+}
+
+.contact-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #4263eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  background-color: #4263eb;
+  padding: 10px;
+}
+
+.about-section {
+  background-color: #0b1c4d;
+  color: white;
+  padding: 60px 40px;
+}
+
+.about-heading {
+  font-size: 5em;
+  font-weight: 640;
+  margin-bottom: 40px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+.about-text p {
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1 1 500px;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+}
+
+.services-section {
+  background-color: #ffffff;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 36px;
+  color: #0a1a44;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #f9f9f9;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(0.95); /* zoom-out effect */
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  color: #0a1a44;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #444;
+}
+
+.portfolio-section {
+  background-color: #0b1c4d;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.portfolio-heading {
+  font-size: 3em;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.portfolio-slide {
+  display: none;
+  flex: 0 0 100%;
+  justify-content: space-around;
+  gap: 30px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.portfolio-slide.active {
+  display: flex;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1 1 30%;
+  min-height: 300px;
+  background-color: white;
+  color: #0b1c4d;
+  border-radius: 12px;
+  padding: 40;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card-image {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: bottom 0.4s ease;
+  z-index: 1;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.project-card:hover .card-image {
+  bottom: 0;
+}
+
+.card-image.connect4 {
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');
+}
+
+.card-image.race {
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');
+}
+
+.card-image.queens {
+  background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');
+}
+
+.card-image.thousand {
+  background-image: url(https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg);
+}
+
+.card-image.count-e {
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api');
+}
+
+.card-image.clocks {
+  background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api');
+}
+
+.project-card.empty {
+  background-color: #344e86;
+  color: #d0d0d0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.portfolio-nav {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.portfolio-section {
+  background-color: #0b1c4d;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.portfolio-heading {
+  font-size: 3em;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.portfolio-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.portfolio-slide {
+  display: none;
+  flex: 0 0 100%;
+  justify-content: space-around;
+  gap: 30px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.portfolio-slide.active {
+  display: flex;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1 1 30%;
+  min-height: 300px;
+  background-color: white;
+  color: #0b1c4d;
+  border-radius: 12px;
+  padding: 0;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px 12px 0 0;
+  padding: 15px 20px;
+  z-index: 2;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Image Slide Hover */
+.card-image {
+  position: absolute;
+  bottom: -100%;
+  left: 10;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: bottom 0.2s ease;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.project-card:hover .card-image {
+  bottom: 0;
+}
+
+.portfolio-nav {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+:root {
+  --navy-blue: #0a1a44;
+  --ocean-blue: #1ca9c9;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: var(--navy-blue);
+}
+
+.contact-section {
+  padding: 80px 40px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+}
+
+.contact-info h2 {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  font-size: 1.1em;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: var(--ocean-blue);
+}
+
+.social-icons {
+  margin: 25px 0;
+}
+
+.social-icons a {
+  margin-right: 20px;
+  font-size: 1.2em;
+  color: var(--navy-blue);
+  text-decoration: none;
+}
+
+.download-btn {
+  padding: 12px 28px;
+  font-size: 1em;
+  background-color: var(--ocean-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #0a1a44; /* Navy blue */
+  color: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  padding: 12px 28px;
+  font-size: 1em;
+  background-color: var(--ocean-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#contact {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://st4.depositphotos.com/8211188/20291/i/450/depositphotos_202918032-stock-photo-molecular-structure-background-abstract-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scaleX(-1); /* Flip horizontally */
+  z-index: 0;
+  opacity: 1;
+}
+
+#contact > * {
+  position: relative;
+  z-index: 1;
+}

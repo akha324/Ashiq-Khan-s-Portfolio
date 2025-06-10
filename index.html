@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Ashiq Khan's Portfolio </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Ashiq Khan</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<section class = "hero">
+    <div class = "hero-content">
+      <h1> Hi, <br> I'm <span class = "highlight"> Ashiq </span>,<br>Computer Science Student</h1>
+        <button class = "contact-btn"> Contact </button>
+   </div>
+   <div class = "hero-image">
+     <img src = "your-photo.png" alt = "Ashiq" />
+   </div>
+ </section>
+
+<body>
+
+<section id="about" class="about-section">
+  <div class="about-heading">About Me</div>
+  <div class="about-wrapper">
+    <div class="about-text">
+      <p>
+         Hello! I'm Ashiq - a Computer Science student at CUNY Queens College with a strong interest in programming, graphical design, and digital innovation. I enjoy playing video games, listening to music, drawing, reading manga, and writing code. I also have a large variety of skills including solving real-world problems, documenting & debugging code, and creating polished web applications that are both functional and visually engaging. Once I graduate from college, I hope to become a software engineer at Google. I'm constanatly seeking opportunities to learn new technologies and push the boundaries of what I can create.
+      </p>
+    </div>
+    <div class = "about-image">
+      <img src = "https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png" alt = "Windows Computer" />
+    </div>
+  </div>
+</section>
+
+</body>
+
+<section id="services" class="services-section">
+  <h2 class="services-heading">Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4269/4269613.png" alt="Coding" class="service-icon" />
+      <h3>Coding</h3>
+      <p>Clean, efficient, and scalable code written in modern languages.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721298.png" alt="Web Development" class="service-icon" />
+      <h3>Web Development</h3>
+      <p>Responsive and user-friendly websites built with HTML, CSS, JS.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4048/4048619.png" alt="Debugging" class="service-icon" />
+      <h3>Debugging</h3>
+      <p>Spotting and fixing issues fast using efficient debugging tools.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3579/3579996.png" alt="Documentation" class="service-icon" />
+      <h3>Documentation</h3>
+      <p>Well-organized and helpful documentation for long-term maintenance.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4366/4366909.png" alt="Problem Solving" class="service-icon" />
+      <h3>Problem Solving</h3>
+      <p>Creative and logical approaches to tackle technical challenges.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Design" class="service-icon" />
+      <h3>Graphical Design</h3>
+      <p>Crafting beautiful visuals that align with your brand and message.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio-section">
+  <h2 class="portfolio-heading">My Projects</h2>
+  <div class="portfolio-container">
+    <button class="portfolio-nav left" onclick="slideProjects(-1)">&#10094;</button>
+    <div class="portfolio-slider">
+      
+      <!-- Slide 1 -->
+      <div class="portfolio-slide active">
+        <a href="main.cpp" download class="project-card">
+          <div class="card-content">
+            <h3>Connect 4</h3>
+            <p>Challenge a friend or the computer in a classic game of Connect 4!</p>
+          </div>
+          <div class="card-image connect4"></div>
+        </a>
+
+        <a href="main (2).cpp" download class="project-card">
+          <div class="card-content">
+            <h3>Score the Race</h3>
+            <p>Calculate race scores and determine the winner fairly.</p>
+          </div>
+          <div class="card-image race"></div>
+        </a>
+
+        <a href="main (1).cpp" download class="project-card">
+          <div class="card-content">
+            <h3>The 8 Queens</h3>
+            <p>Brute-force solution to the classic chess puzzle.</p>
+          </div>
+          <div class="card-image queens"></div>
+        </a>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="portfolio-slide">
+        <a href="Assignment1.java" download class="project-card">
+          <div class="card-content">
+            <h3>The Thousand Game</h3>
+            <p>Play a numbers challenge to reach one thousand!</p>
+          </div>
+          <div class="card-image thousand"></div>
+        </a>
+
+        <a href="Project0.java" download class="project-card">
+          <div class="card-content">
+            <h3>Count the E’s</h3>
+            <p>Spot every “E” in a tricky text puzzle.</p>
+          </div>
+          <div class="card-image count-e"></div>
+        </a>
+
+        <a href="ClockGUI.java" download class="project-card">
+          <div class="card-content">
+            <h3>Sort the Clocks</h3>
+            <p>Arrange clock faces in sorted order visually.</p>
+          </div>
+          <div class="card-image clocks"></div>
+        </a>
+      </div>
+
+    </div>
+    <button class="portfolio-nav right" onclick="slideProjects(1)">&#10095;</button>
+  </div>
+</section>
+  
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
+    <!-- Left: Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Me</h2>
+      <p>
+        <i class="fas fa-envelope contact-icon"></i>
+        <a href="mailto:ASHIQ.KHAN79@qmail.cuny.edu" class="email-link">ASHIQ.KHAN79@qmail.cuny.edu</a>
+      </p>
+      <p><i class="fas fa-phone contact-icon"></i> 9178265205</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <!-- Download CV Button -->
+      <a href="Ashiq_Khan_CV.pdf" download class="download-btn">Download CV</a>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</section>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<div class="gray-net-background">
+  <section class="contact-section">
+    <!-- your contact section content -->
+  </section>
+</div>
+
+  </body>
+</html>   
