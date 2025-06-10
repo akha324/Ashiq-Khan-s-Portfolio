@@ -150,6 +150,31 @@
     <button class="portfolio-nav right" onclick="slideProjects(1)">&#10095;</button>
   </div>
 </section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.portfolio-slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      slide.style.display = 'none';
+    });
+    slides[index].classList.add('active');
+    slides[index].style.display = 'flex'; // or 'block' based on layout
+  }
+
+  function slideProjects(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    else if (currentSlide >= slides.length) currentSlide = 0;
+    showSlide(currentSlide);
+  }
+
+  // Initialize
+  slides.forEach(slide => slide.style.display = 'none');
+  showSlide(currentSlide);
+</script>  
   
 <section id="contact" class="contact-section">
   <div class="contact-wrapper">
