@@ -59,7 +59,7 @@
 
     /* Hero Section */
     .hero {
-      background-image: url('istockphoto-135931236-640x640.jpg');
+      background-image: url('https://media.istockphoto.com/id/182493016/photo/sky-and-grass-backround.jpg?s=612x612&w=0&k=20&c=u9Hk93MPbXqjOTTEFNGMq7JJJ46HDBlnqiG7dvrbu9w=');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -76,6 +76,12 @@
       background-color: rgba(255, 255, 255, 0.85);
       padding: 30px;
       border-radius: 10px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin: 0;
     }
 
     .hero-image img {
@@ -117,63 +123,66 @@
   </header>
 
   <!-- ✅ Hero Section -->
-<div class="hero-content">
-  <h1 style="font-size: 5rem; line-height: 1.2; margin: 0;">
-    Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student
-  </h1>
-  <a href="#contact">
-    <button class="contact-btn">Contact</button>
-  </a>
-</div>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>
+        Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student
+      </h1>
+      <a href="#contact">
+        <button class="contact-btn">Contact</button>
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="ToonAI.png" alt="Ashiq" />
+    </div>
+  </section>
 
-<section id="about" class="about-section" style="padding: 60px; background-color: #0a1a44;">
-  <div class="about-heading" style="font-size: 36px; font-weight: bold; margin-bottom: 30px; color: white;">
-    About Me
-  </div>
-
-  <div class="about-wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
-    <div class="about-text" style="
-      background-color: #ffffff;
-      border-radius: 25px;
-      padding: 30px 35px;
-      max-width: 650px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      font-size: 1.15em;
-      line-height: 1.7;
-      color: #111;
-      border: 1px solid #ccc;
-      flex: 1 1 300px;
-    ">
-      <p>
-        <b>Hello! I'm Ashiq — a Computer Science student at CUNY Queens College with a strong interest in programming, graphical design, and digital innovation. I enjoy playing video games, listening to music, drawing, reading manga, and writing code. I also have a large variety of skills including solving real-world problems, documenting & debugging code, and creating polished web applications that are both functional and visually engaging. Once I graduate from college, I hope to become a software engineer at Google. I'm constantly seeking opportunities to learn new technologies and push the boundaries of what I can create.</b>
-      </p>
+  <!-- ✅ About Section -->
+  <section id="about" class="about-section" style="padding: 60px; background-color: #0a1a44;">
+    <div class="about-heading" style="font-size: 36px; font-weight: bold; margin-bottom: 30px; color: white;">
+      About Me
     </div>
 
- <!-- Shifted Image -->
-    <div class="about-image" style="
-      width: 400px;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: white;
-      margin-left: 20px; /* Shift image toward the right */
-  ">
-  
-  <img src="https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png"
-       alt="Windows Computer"
-       style="
-       max-width: 100%;
-       max-height: 100%;
-       object-fit: contain;
-  " />
-  </div>
-</div>
-</section>
+    <div class="about-wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+      <div class="about-text" style="
+        background-color: #ffffff;
+        border-radius: 25px;
+        padding: 30px 35px;
+        max-width: 650px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        font-size: 1.15em;
+        line-height: 1.7;
+        color: #111;
+        border: 1px solid #ccc;
+        flex: 1 1 300px;
+      ">
+        <p>
+          <b>Hello! I'm Ashiq — a Computer Science student at CUNY Queens College with a strong interest in programming, graphical design, and digital innovation. I enjoy playing video games, listening to music, drawing, reading manga, and writing code. I also have a large variety of skills including solving real-world problems, documenting & debugging code, and creating polished web applications that are both functional and visually engaging. Once I graduate from college, I hope to become a software engineer at Google. I'm constantly seeking opportunities to learn new technologies and push the boundaries of what I can create.</b>
+        </p>
+      </div>
+
+      <!-- Shifted Image -->
+      <div class="about-image" style="
+        width: 400px;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        margin-left: 20px;
+      ">
+        <img src="https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png"
+             alt="Windows Computer"
+             style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+      </div>
+    </div>
+  </section>
+
 </body>
+</html>
 
 <!-- The purpose of this section is to showcase Ashiq's technical and creative services, including coding, design, debugging, and problem solving. -->  
 <section id = "services" class = "services-section">
