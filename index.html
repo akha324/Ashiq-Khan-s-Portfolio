@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Body - clean base */
     body {
       margin: 0;
       padding: 0;
@@ -16,7 +15,6 @@
       background-color: #ffffff;
     }
 
-    /* Header bar */
     header {
       background-color: rgba(10, 26, 68, 0.95);
       padding: 20px 40px;
@@ -60,9 +58,8 @@
       margin-top: 5px;
     }
 
-    /* Hero Section with background image */
     .hero {
-      background-image: url('istockphoto-135931236-640x640.jpg'); /* Your uploaded image */
+      background-image: url('istockphoto-135931236-640x640.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -98,6 +95,35 @@
       cursor: pointer;
       font-weight: bold;
     }
+
+    .about-section {
+      padding: 80px 40px;
+      background-color: #f5f5f5;
+    }
+
+    .about-heading {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about-text {
+      flex: 1;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .about-image img {
+      width: 350px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
@@ -118,7 +144,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ✅ Home Section (Top of Page) -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student</h1>
@@ -129,8 +155,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <!-- The purpose of this section is to give a brief overview of who Ashiq is, his interests, goals, and an image to visually support the description. -->
+  <!-- ✅ About Section (After Home) -->
   <section id="about" class="about-section">
     <div class="about-heading">About Me</div>
     <div class="about-wrapper">
@@ -145,9 +170,7 @@
     </div>
   </section>
 </body>
-</html>
-
-  
+ 
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-content">
