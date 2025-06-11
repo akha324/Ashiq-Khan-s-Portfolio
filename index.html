@@ -58,7 +58,7 @@
       margin-top: 5px;
     }
 
-    /* Home (Hero) Section */
+    /* Hero Section */
     .hero {
       background-image: url('istockphoto-135931236-640x640.jpg');
       background-size: cover;
@@ -100,6 +100,82 @@
 </head>
 
 <body>
+
+  <!-- ✅ Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Ashiq Khan</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student</h1>
+      <button class="contact-btn">Contact</button>
+    </div>
+    <div class="hero-image">
+      <img src="ToonAI.png" alt="Ashiq" />
+    </div>
+  </section>
+
+  <!-- ✅ About Section -->
+  <section id="about" class="about-section" style="padding: 60px; background-color: #0a1a44;">
+    <div class="about-heading" style="font-size: 36px; font-weight: bold; margin-bottom: 30px; color: white;">
+      About Me
+    </div>
+
+    <div class="about-wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+      
+      <!-- Bubble-styled text -->
+      <div class="about-text" style="
+        background-color: #ffffff;
+        border-radius: 25px;
+        padding: 30px 35px;
+        max-width: 650px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        font-size: 1.15em;
+        line-height: 1.7;
+        color: #111;
+        border: 1px solid #ccc;
+        flex: 1 1 300px;
+      ">
+        <p>
+          Hello! I'm Ashiq — a Computer Science student at CUNY Queens College with a strong interest in programming, graphical design, and digital innovation. I enjoy playing video games, listening to music, drawing, reading manga, and writing code. I also have a large variety of skills including solving real-world problems, documenting & debugging code, and creating polished web applications that are both functional and visually engaging. Once I graduate from college, I hope to become a software engineer at Google. I'm constantly seeking opportunities to learn new technologies and push the boundaries of what I can create.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="about-image" style="
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      ">
+        <img src="https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png"
+             alt="Windows Computer"
+             style="
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               object-position: center;
+             " />
+      </div>
+      
+    </div>
+  </section>
+
+</body>
 
   <!-- ✅ Navigation -->
   <header>
