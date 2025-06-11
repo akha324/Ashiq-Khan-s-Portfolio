@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Body - clean base */
     body {
       margin: 0;
       padding: 0;
@@ -16,7 +15,6 @@
       background-color: #ffffff;
     }
 
-    /* Header bar */
     header {
       background-color: rgba(10, 26, 68, 0.95);
       padding: 20px 40px;
@@ -60,9 +58,8 @@
       margin-top: 5px;
     }
 
-    /* Hero Section with background image */
     .hero {
-      background-image: url('istockphoto-135931236-640x640.jpg'); /* Your uploaded image */
+      background-image: url('istockphoto-135931236-640x640.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -76,7 +73,7 @@
 
     .hero-content {
       max-width: 600px;
-      background-color: rgba(255, 255, 255, 0.85); /* Optional: makes text more readable */
+      background-color: rgba(255, 255, 255, 0.85);
       padding: 30px;
       border-radius: 10px;
     }
@@ -100,6 +97,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="nav-container">
@@ -115,6 +113,20 @@
       </nav>
     </div>
   </header>
+
+  <!-- ✅ This is the single "Home" section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student</h1>
+      <button class="contact-btn">Contact</button>
+    </div>
+    <div class="hero-image">
+      <img src="ToonAI.png" alt="Ashiq" />
+    </div>
+  </section>
+</body>
+</html>
+
 
 <!-- The purpose of this section is to showcase Ashiq's technical and creative services, including coding, design, debugging, and problem solving. -->  
 <section id = "services" class = "services-section">
