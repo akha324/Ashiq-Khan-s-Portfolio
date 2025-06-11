@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* Body - clean base */
     body {
       margin: 0;
       padding: 0;
@@ -15,6 +16,7 @@
       background-color: #ffffff;
     }
 
+    /* Header bar */
     header {
       background-color: rgba(10, 26, 68, 0.95);
       padding: 20px 40px;
@@ -58,8 +60,9 @@
       margin-top: 5px;
     }
 
+    /* Hero Section with background image */
     .hero {
-      background-image: url('istockphoto-135931236-640x640.jpg');
+      background-image: url('istockphoto-135931236-640x640.jpg'); /* Your uploaded image */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -73,7 +76,7 @@
 
     .hero-content {
       max-width: 600px;
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.85); /* Optional: makes text more readable */
       padding: 30px;
       border-radius: 10px;
     }
@@ -97,7 +100,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="nav-container">
@@ -114,7 +116,7 @@
     </div>
   </header>
 
-  <!-- ✅ This is the single "Home" section -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student</h1>
@@ -125,8 +127,36 @@
     </div>
   </section>
 </body>
-</html>
 
+<!-- The purpose of this section is to introduce Ashiq with a welcoming message, title, and profile image to make a strong first impression. -->
+<section class = "hero">
+    <div class = "hero-content">
+      <h1> Hi, <br> I'm <span class = "highlight"> Ashiq </span>,<br>Computer Science Student</h1>
+        <button class = "contact-btn"> Contact </button>
+   </div>
+   <div class = "hero-image">
+     <img src = "ToonAI.png" alt = "Ashiq" />
+   </div>
+ </section>
+
+<body>
+
+<!-- The purpose of this section is to give a brief overview of who Ashiq is, his interests, goals, and an image to visually support the description. -->  
+<section id = "about" class = "about-section">
+  <div class = "about-heading">About Me</div>
+  <div class = "about-wrapper">
+    <div class = "about-text">
+      <p>
+         Hello! I'm Ashiq - a Computer Science student at CUNY Queens College with a strong interest in programming, graphical design, and digital innovation. I enjoy playing video games, listening to music, drawing, reading manga, and writing code. I also have a large variety of skills including solving real-world problems, documenting & debugging code, and creating polished web applications that are both functional and visually engaging. Once I graduate from college, I hope to become a software engineer at Google. I'm constanatly seeking opportunities to learn new technologies and push the boundaries of what I can create.
+      </p>
+    </div>
+    <div class = "about-image">
+      <img src = "https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png" alt = "Windows Computer" />
+    </div>
+  </div>
+</section>
+
+</body>
 
 <!-- The purpose of this section is to showcase Ashiq's technical and creative services, including coding, design, debugging, and problem solving. -->  
 <section id = "services" class = "services-section">
@@ -299,4 +329,4 @@
 </div>
 
   </body>
-</html>   
+</html>    
