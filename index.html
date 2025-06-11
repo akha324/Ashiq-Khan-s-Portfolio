@@ -1,27 +1,85 @@
 <!DOCTYPE html>
 <!-- The purpose of this section is to provide a fixed navigation bar with links to all main sections of the portfolio page. -->
-<html lang = "en">
+<html lang="en">
 <head>
-  <meta charset = "UTF-8" />
-  <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
-  <title> Ashiq Khan's Portfolio </title>
-  <link rel = "stylesheet" href = "style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashiq Khan's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Temporary embedded style to show sky & grass background */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://cdn.pixabay.com/photo/2017/10/20/20/59/clouds-2876797_1280.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: rgba(10, 26, 68, 0.95); /* Dark navy semi-transparent */
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links li a.active::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: white;
+      width: 100%;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class = "nav-container">
-      <div class = "logo">Ashiq Khan</div>
+    <div class="nav-container">
+      <div class="logo">Ashiq Khan</div>
       <nav>
-        <ul class = "nav-links">
-          <li><a href = "#home" class="active">Home</a></li>
-          <li><a href = "#about">About</a></li>
-          <li><a href = "#services">Services</a></li>
-          <li><a href = "#portfolio">Portfolio</a></li>
-          <li><a href = "#contact">Contact</a></li>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
+</body>
+</html>
 
 <!-- The purpose of this section is to introduce Ashiq with a welcoming message, title, and profile image to make a strong first impression. -->
 <section class = "hero">
