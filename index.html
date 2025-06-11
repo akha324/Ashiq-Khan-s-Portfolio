@@ -7,64 +7,126 @@
   <title>Ashiq Khan's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 
-<style>
-  /* Body background - blue sky and green grass */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-image: url('istockphoto-135931236-640x640.jpg'); /* Local image you uploaded */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
+  <style>
+    /* Body - clean base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+    }
 
-  header {
-    background-color: rgba(10, 26, 68, 0.95); /* Dark navy semi-transparent */
-    padding: 20px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+    /* Header bar */
+    header {
+      background-color: rgba(10, 26, 68, 0.95);
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-  }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
 
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
 
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-  .nav-links li a.active::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background: white;
-    width: 100%;
-    margin-top: 5px;
-  }
-</style>
+    .nav-links li a.active::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: white;
+      width: 100%;
+      margin-top: 5px;
+    }
 
+    /* Hero Section with background image */
+    .hero {
+      background-image: url('istockphoto-135931236-640x640.jpg'); /* Your uploaded image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      min-height: 100vh;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.85); /* Optional: makes text more readable */
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .hero-image img {
+      width: 300px;
+      height: auto;
+      border: 5px solid royalblue;
+      border-radius: 50%;
+    }
+
+    .contact-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Ashiq Khan</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi,<br>I'm <span class="highlight">Ashiq</span>,<br>Computer Science Student</h1>
+      <button class="contact-btn">Contact</button>
+    </div>
+    <div class="hero-image">
+      <img src="ToonAI.png" alt="Ashiq" />
+    </div>
+  </section>
+</body>
 <body>
   <header>
     <div class="nav-container">
