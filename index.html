@@ -7,64 +7,63 @@
   <title>Ashiq Khan's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 
-  <style>
-    /* Temporary embedded style to show sky & grass background */
-    /* Add this to style.css */
-   body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background-image: url('https://cdn.pixabay.com/photo/2017/10/20/20/59/clouds-2876797_1280.jpg'); /* Blue sky & green grass */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
+<style>
+  /* Body background - blue sky and green grass */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('istockphoto-135931236-640x640.jpg'); /* Local image you uploaded */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
 
+  header {
+    background-color: rgba(10, 26, 68, 0.95); /* Dark navy semi-transparent */
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-    header {
-      background-color: rgba(10, 26, 68, 0.95); /* Dark navy semi-transparent */
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
 
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+  .nav-links li a.active::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: white;
+    width: 100%;
+    margin-top: 5px;
+  }
+</style>
 
-    .nav-links li a.active::after {
-      content: "";
-      display: block;
-      height: 2px;
-      background: white;
-      width: 100%;
-      margin-top: 5px;
-    }
-  </style>
 </head>
 <body>
   <header>
