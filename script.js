@@ -1,8 +1,5 @@
 console.log("Slider script loaded");
 
-//
-// 🔹 ABOUT ME SECTION
-//
 let currentAboutSlide = 0;
 
 function updateAboutSlider() {
@@ -29,9 +26,6 @@ function goAbout(index) {
   updateAboutSlider();
 }
 
-//
-// 🔸 PORTFOLIO SECTION
-//
 let currentPortfolioSlide = 0;
 
 function updatePortfolioSlider() {
@@ -60,9 +54,6 @@ function goPortfolio(index) {
   updatePortfolioSlider();
 }
 
-//
-// 🔑 INIT
-//
 document.addEventListener("DOMContentLoaded", () => {
   updateAboutSlider();
   updatePortfolioSlider();
