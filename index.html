@@ -137,60 +137,94 @@
     </div>
   </section>
 
-<section id="about" class="about-section" style="padding: 60px; background-color: #0a1a44;">
-  <div class="about-heading" style="font-size: 36px; font-weight: bold; margin-bottom: 30px; color: white;">
-    About Me
+<section id="about" class="about-section">
+  <h2 class="about-heading">About&nbsp;Me</h2>
+
+  <div class="about-arrows">
+    <button class="about-arrow left" onclick="moveAbout(-1)">&lsaquo;</button>
+    <button class="about-arrow right" onclick="moveAbout(1)">&rsaquo;</button>
   </div>
 
-  <div class="about-wrapper" style="
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  ">
+  <div class="about-slider">
 
-    <!-- 🟧 LEFT: Text box with orange wave background and black font -->
-    <div class="about-text" style="
-      background-image: url('36104772-abstract-art-curved-orange-background-design.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: black; /* ✔ Makes text readable */
-      border-radius: 25px;
-      padding: 30px 35px;
-      max-width: 600px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      font-size: 1.15em;
-      line-height: 1.7;
-      border: 1px solid #ccc;
-      flex: 1 1 300px;
-    ">
-      <p>
-        <b>Hello! I'm Ashiq — a Computer Science student at CUNY Queens College with a strong interest in programming, graphical design, and digital innovation. I enjoy playing video games, listening to music, drawing, reading manga, and writing code. I also have a large variety of skills including solving real-world problems, documenting & debugging code, and creating polished web applications that are both functional and visually engaging. Once I graduate from college, I hope to become a software engineer at Google. I'm constantly seeking opportunities to learn new technologies and push the boundaries of what I can create.</b>
-      </p>
+<!-- Slide 1: Introduction -->
+<div class="about-slide active">
+  <div class="slide-content">
+    <div class="about-bubble">
+      <h3>Introduction</h3>
+      <p><strong>Hello! I'm Ashiq — a Computer Science student at CUNY Queens College with a passion for technology and digital innovation.</strong><br>
+      I've always been fascinated by how computers work and how software can solve real-world problems.<br>
+      My interests include both front-end and back-end development, where I enjoy transforming ideas into interactive experiences.<br>
+      I'm constantly exploring new programming languages, frameworks, and tools to stay ahead in a fast-moving field.<br>
+      I take pride in writing clean, maintainable code and enjoy the challenge of debugging complex issues.<br>
+      Whether it's building web applications or solving algorithm problems, I approach every task with curiosity, focus, and persistence.</p>
+    </div>
+    <div class="image-section">
+      <img src="https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png" alt="Windows Computer" />
+    </div>
+  </div>
+</div>
+
+ <!-- Slide 2: Education -->
+<div class="about-slide">
+  <div class="slide-content">
+    <div class="about-bubble">
+      <h3>Education &amp; Background</h3>
+      <p>I study Computer Science at <strong>CUNY Queens College</strong> and previously graduated from <strong>Thomas A. Edison CTE High School</strong>.<br>
+      There, I earned an Advanced Regents Diploma and CTE endorsement in Computer Networking.<br>
+      I also successfully passed the <strong>CCENT certification</strong> (Cisco Certified Entry Networking Technician), strengthening my foundation in networking.<br>
+      The hands-on experience with routers and switches gave me a solid technical base.<br>
+      My passion for problem-solving and innovation grew as I learned about networks and system design.<br>
+      Since then, I've completed courses in Java, C++, Python, and full-stack web development.<br>
+      This education has equipped me with both theoretical knowledge and practical skills for modern software engineering.</p>
+    </div>
+    <div class="image-section">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135797.png" alt="Education icon" />
+    </div>
+  </div>
+</div>
+
+    <!-- Slide 3: Career & Goals -->
+    <div class="about-slide">
+      <div class="slide-content">
+        <div class="about-bubble">
+          <h3>Career &amp; Goals</h3>
+          <p>I aspire to become a skilled Software Engineer at a top-tier tech company like Google.<br>
+          I want to work on innovative systems that impact millions of users worldwide.<br>
+          My main interests lie in backend engineering, automation, and infrastructure development.<br>
+          I aim to contribute to open-source software and build tools that help other developers succeed.<br>
+          Eventually, I hope to lead teams, design architecture, and shape the future of user-first technology.<br>
+          I'm committed to lifelong learning, continuous growth, and giving back to the tech community.</p>
+        </div>
+        <div class="image-section">
+          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Career goals icon" />
+        </div>
+      </div>
     </div>
 
-    <!-- 💻 RIGHT: Windows computer image only -->
-    <div class="about-image" style="
-      flex: 1 1 300px;
-      max-width: 500px;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    ">
-      <img src="https://learn.microsoft.com/bs-latn-ba/windows-hardware/design/images/desktop.png"
-           alt="Windows Computer"
-           style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+<!-- Slide 4: Hobbies & Interests -->
+<div class="about-slide">
+  <div class="slide-content">
+    <div class="about-bubble">
+      <h3>Hobbies &amp; Interests</h3>
+      <p>When I'm not coding, I enjoy drawing peaceful landscapes and landmarks that inspire calmness and creativity.<br>
+      I love reading manga, especially stories that blend imagination with deep life lessons.<br>
+      Music is also a big part of my life — I enjoy playing classical pieces on the piano, especially "Für Elise."<br>
+      I'm a fan of Pokémon and Yu-Gi-Oh!, which sharpen both my strategy and appreciation for game design.<br>
+      I also love to eat pizza and ice cream — simple joys that bring comfort after a long day of coding or drawing.<br>
+      These hobbies and favorites help me balance technical skills with creativity, fun, and personal expression.</p>
     </div>
+    <div class="image-section">
+      <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Hobbies icon" />
+    </div>
+  </div>
+</div>
 
+  <div class="about-dots">
+    <span class="dot active" onclick="goAbout(0)"></span>
+    <span class="dot" onclick="goAbout(1)"></span>
+    <span class="dot" onclick="goAbout(2)"></span>
+    <span class="dot" onclick="goAbout(3)"></span>
   </div>
 </section>
 
