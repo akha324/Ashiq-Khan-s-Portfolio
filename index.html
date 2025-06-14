@@ -140,10 +140,28 @@
 <section id="about" class="about-section">
   <h2 class="about-heading">About&nbsp;Me</h2>
 
-  <div class="about-arrows">
-  <button class="about-arrow left" onclick="moveAbout(-1)">&lsaquo;</button>
-  <button class="about-arrow right" onclick="moveAbout(1)">&rsaquo;</button>
-</div>
+  <div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const aboutSlides = document.querySelectorAll(".about-slide");
+      const aboutDots = document.querySelectorAll(".about-dots .dot");
+      let currentAbout = 0;
+
+      function showAboutSlide(index) {
+        if (!aboutSlides.length) return;
+        aboutSlides.forEach((s) => s.classList.remove("active"));
+        aboutDots.forEach((d) => d.classList.remove("active"));
+        currentAbout = (index + aboutSlides.length) % aboutSlides.length;
+        aboutSlides[currentAbout].classList.add("active");
+        aboutDots[currentAbout].classList.add("active");
+      }
+
+      window.moveAbout = (step) => showAboutSlide(currentAbout + step);
+      window.goAbout = (index) => showAboutSlide(index);
+      showAboutSlide(currentAbout);
+    });
+  </script>
+  </div>
 
   <div class="about-slider">
 
