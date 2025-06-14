@@ -1,14 +1,38 @@
-console.log("from script file");
+console.log("About section slider script loaded");
 
-let currentSlide = 0;
+let currentAboutSlide = 0;
+const aboutSlides = document.querySelectorAll(".about-slide");
+const aboutDots = document.querySelectorAll(".about-dots .dot");
 
-function slideProjects(direction) {
-  const slides = document.querySelectorAll('.portfolio-slide');
-  slides[currentSlide].classList.remove('active');
+function updateAboutSlider() {
+  // Hide all slides
+  aboutSlides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
 
-  currentSlide += direction;
-  if (currentSlide < 0) currentSlide = slides.length - 1;
-  if (currentSlide >= slides.length) currentSlide = 0;
+  // Deactivate all dots
+  aboutDots.forEach((dot) => {
+    dot.classList.remove("active");
+  });
 
-  slides[currentSlide].classList.add('active');
+  // Show the current slide and activate corresponding dot
+  aboutSlides[currentAboutSlide].classList.add("active");
+  aboutDots[currentAboutSlide].classList.add("active");
+}
+
+function moveAbout(direction) {
+  currentAboutSlide += direction;
+
+  if (currentAboutSlide < 0) {
+    currentAboutSlide = aboutSlides.length - 1;
+  } else if (currentAboutSlide >= aboutSlides.length) {
+    currentAboutSlide = 0;
+  }
+
+  updateAboutSlider();
+}
+
+function goAbout(index) {
+  currentAboutSlide = index;
+  updateAboutSlider();
 }
