@@ -79,27 +79,129 @@ header {
   border-radius: 50%;
 }
 
-/* About section shrink */
+/* 🔹 ABOUT SECTION (Improved Professional Layout) */
 .about-section {
-  padding: 40px; /* reduced from 60px */
+  padding: 40px 20px;
+  background-color: #0a1a44;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-heading {
-  font-size: 28px; /* reduced from 36px */
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 50px;
   color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
 }
 
-.about-text {
-  font-size: 1em;
-  padding: 20px 25px;
-  max-width: 500px;
+.about-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.about-image img {
+.about-slide {
+  display: none;
   width: 100%;
-  max-width: 280px; /* reduced image size */
+}
+
+.about-slide.active {
+  display: block;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+}
+
+.about-bubble {
+  font-size: 1em;
+  padding: 25px 30px;
+  max-width: 500px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  line-height: 1.7;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.about-bubble h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #0a1a44;
+}
+
+.image-section {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 280px;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.about-arrow {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 3rem;
+  padding: 0 15px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.18s ease;
+}
+
+.about-arrow:hover {
+  transform: scale(1.2);
+}
+
+.about-dots {
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.about-dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-dots .dot.active {
+  background-color: #ffffff;
 }
 
 body {
@@ -524,6 +626,10 @@ body {
   opacity: 1;
 }
 
+#contact > * {
+  position: relative;
+  z-index: 1;
+}
 #contact > * {
   position: relative;
   z-index: 1;
