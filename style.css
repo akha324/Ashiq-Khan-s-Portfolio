@@ -536,121 +536,135 @@ body {
   --bg-opacity: 0.25;      /* tweak dim overlay */
 }
 
-/* -----------------------------------------------------
-   CONTACT SECTION
------------------------------------------------------ */
-.contact-section{
-  /* hero-style photo */
-  background:url("images/contact-bg.jpg") center/cover no-repeat fixed;
-  padding:80px 0;
-  color:#fff;
-  position:relative;
-  overflow:hidden;          /* crop overlays */
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  /* Put your own path or URL here */
+  background: url("images/contact-bg.jpg") center / cover no-repeat fixed;
+  /* ^ center = centers the picture
+     / cover  = fills the width & height without distortion
+     no-repeat = stops tiling
+     fixed     = creates a subtle parallax effect (optional) */
+
+  /* Give the section enough height & spacing so the image is visible */
+  padding: 80px 0;          /* top/bottom breathing room */
+  position: relative;       /* needed for overlay + absolute children */
+  color: #fff;              /* white text shows up on dark photo */
 }
 
-/* dark glass overlay */
-.contact-section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-  z-index:0;                /* bottom layer */
+/* OPTIONAL – dark overlay so text/forms pop */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* tweak darkness here */
+  z-index: 0;                   /* sits underneath real content */
 }
 
-/* subtle gray net overlay (remove if not needed) */
-.contact-section::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url("images/gray-net.png") repeat;
-  opacity:0.2;
-  z-index:1;                /* above dark layer */
-  pointer-events:none;      /* keep links clickable */
+.contact-wrapper {
+  position: relative;   /* puts real content above overlay */
+  z-index: 1;
 }
 
-/* ---------------- WRAPPER ---------------- */
-.contact-wrapper{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  gap:3rem;
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
-  position:relative;
-  z-index:2;                /* above both overlays */
-}
-@media(max-width:768px){
-  .contact-wrapper{
-    flex-direction:column;
-    gap:2rem;
+/* keep form + info tidy on narrow screens */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
-/* ---------------- INFO COLUMN ---------------- */
-.contact-info{flex:1 1 300px;}
-
-.contact-info h2{
-  font-size:2.8rem;
-  font-weight:700;
-  margin-bottom:2rem;
+.contact-info {
+  flex: 1 1 300px;
 }
 
-.contact-info p{
-  display:flex;
-  align-items:center;
-  font-size:1.1rem;
-  margin:1rem 0;
-}
-.contact-icon{
-  margin-right:10px;
-  font-size:1.2em;
-  color:var(--ocean-blue);
+.contact-info h2 {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-/* social icons */
-.social-icons{margin:2rem 0;}
-.social-icons a{
-  margin-right:20px;
-  font-size:1.2em;
-  color:var(--navy-blue);
-  text-decoration:none;
+.contact-info p {
+  font-size: 1.1em;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
 }
 
-/* download + submit buttons */
-.download-btn,
-.submit-btn{
-  display:inline-block;
-  padding:12px 28px;
-  font-size:1rem;
-  font-weight:700;
-  background:var(--ocean-blue);
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  text-decoration:none;
-  transition:text-decoration .2s;
+.contact-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: var(--ocean-blue);
 }
-.download-btn:hover,
-.submit-btn:hover{ text-decoration:underline; }
 
-/* ---------------- FORM COLUMN ---------------- */
-.contact-form{
-  flex:1 1 600px;
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+.social-icons {
+  margin: 25px 0;
 }
+
+.social-icons a {
+  margin-right: 20px;
+  font-size: 1.2em;
+  color: var(--navy-blue);
+  text-decoration: none;
+}
+
+.download-btn {
+  padding: 12px 28px;
+  font-size: 1em;
+  background-color: var(--ocean-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ---------- Global palette ---------- */
+:root {
+  --ocean-blue: #0077ff;          /* button background */
+  --bg-opacity: 0.25;             /* contact bg dimness */
+}
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .contact-form input,
-.contact-form textarea{
-  padding:15px 20px;
-  font-size:1rem;
-  border:none;
-  border-radius:6px;
-  background:#0a1a44;
-  color:#fff;
+.contact-form textarea {
+  padding: 15px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #0a1a44;      /* navy blue */
+  color: #fff;
 }
-.contact-form ::placeholder{
-  color:rgba(255,255,255,.85);
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Buttons (Download + Submit) ---------- */
+.download-btn,
+.submit-btn {
+  text-decoration: none;          /* no underline by default */
+  align-self: flex-start;
+  padding: 12px 28px;
+  font-size: 1em;
+  background-color: var(--ocean-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: text-decoration 0.2s ease;
+}
+
+.download-btn:hover,
+.submit-btn:hover {
+  text-decoration: underline;     /* only on hover */
 }
