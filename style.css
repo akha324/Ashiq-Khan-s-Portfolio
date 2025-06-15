@@ -389,33 +389,33 @@ body {
   padding: 30px 20px;
 }
 
-.project-card:hover .card-image {
-  bottom: 0;
-  clip-path: inset(50% 0 0 0); /* show only top 50% */
-}
-
 .card-content {
   position: relative;
   z-index: 2;
   text-align: center;
   width: 100%;
-  background-color: white; /* Ensure background blocks image */
+  background-color: white;
+  padding: 10px 0;
+  border-radius: 0 0 12px 12px;
 }
 
+/* Sliding background image (reveals bottom half) */
 .card-image {
   position: absolute;
-  bottom: -50%;           /* Start hidden below */
+  bottom: -50%;
   left: 0;
   width: 100%;
-  height: 50%;            /* Only slide into bottom half */
+  height: 50%;
   background-size: cover;
   background-position: center;
   opacity: 0.9;
   transition: bottom 0.3s ease;
-  z-index: 0;             /* Stay behind text */
+  z-index: 1;
+  border-radius: 0 0 12px 12px;
 }
+
 .project-card:hover .card-image {
-  bottom: 0;              /* Slides up to sit under content */
+  bottom: 0;
 }
 
 /* individual project images */
