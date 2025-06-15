@@ -528,109 +528,22 @@ body {
 }
 
 /* -----------------------------------------------------
-   GLOBAL TOKENS (place once, near top of your CSS)
+   GLOBAL TOKENS (define only once)
 ----------------------------------------------------- */
 :root {
-  --ocean-blue: #0077ff;   /* buttons, accents */
-  --navy-blue : #0a1a44;   /* headings, icons   */
-  --bg-opacity: 0.25;      /* tweak dim overlay */
+  --ocean-blue: #0077ff;   /* buttons, icons */
+  --navy-blue : #0a1a44;   /* headings, body text */
 }
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
-  /* Put your own path or URL here */
-  background: url("images/contact-bg.jpg") center / cover no-repeat fixed;
-  /* ^ center = centers the picture
-     / cover  = fills the width & height without distortion
-     no-repeat = stops tiling
-     fixed     = creates a subtle parallax effect (optional) */
-
-  /* Give the section enough height & spacing so the image is visible */
-  padding: 80px 0;          /* top/bottom breathing room */
-  position: relative;       /* needed for overlay + absolute children */
-  color: #fff;              /* white text shows up on dark photo */
-}
-
-/* OPTIONAL – dark overlay so text/forms pop */
-.contact-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55); /* tweak darkness here */
-  z-index: 0;                   /* sits underneath real content */
-}
-
-.contact-wrapper {
-  position: relative;   /* puts real content above overlay */
-  z-index: 1;
-}
-
-/* keep form + info tidy on narrow screens */
-@media (max-width: 768px) {
-  .contact-wrapper {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
-
-.contact-info {
-  flex: 1 1 300px;
-}
-
-.contact-info h2 {
-  font-size: 2.8em;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.contact-info p {
-  font-size: 1.1em;
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-}
-
-.contact-icon {
-  margin-right: 10px;
-  font-size: 1.2em;
-  color: var(--ocean-blue);
-}
-
-.social-icons {
-  margin: 25px 0;
-}
-
-.social-icons a {
-  margin-right: 20px;
-  font-size: 1.2em;
-  color: var(--navy-blue);
-  text-decoration: none;
-}
-
-.download-btn {
-  padding: 12px 28px;
-  font-size: 1em;
-  background-color: var(--ocean-blue);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-:root {
-  --ocean-blue: #0077ff;
-  --navy-blue: #0a1a44;
-}
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  background-color: #ffffff;     /* solid white background */
+  background-color: #ffffff;       /* solid white background */
   padding: 80px 0;
-  color: var(--navy-blue);       /* default text is navy */
+  color: var(--navy-blue);         /* all default text is navy */
+  position: relative;
 }
 
-/* Remove any overlays */
+/* Remove overlays */
 .contact-section::before,
 .contact-section::after {
   content: none;
@@ -649,7 +562,7 @@ body {
   z-index: 1;
 }
 
-/* Responsive stacking */
+/* Responsive layout */
 @media (max-width: 768px) {
   .contact-wrapper {
     flex-direction: column;
@@ -657,7 +570,7 @@ body {
   }
 }
 
-/* Contact Info Column */
+/* Contact Info */
 .contact-info {
   flex: 1 1 300px;
 }
@@ -666,7 +579,7 @@ body {
   font-size: 2.8em;
   font-weight: bold;
   margin-bottom: 30px;
-  color: var(--navy-blue); /* redundant but safe */
+  color: var(--navy-blue);
 }
 
 .contact-info p {
@@ -674,16 +587,16 @@ body {
   margin: 15px 0;
   display: flex;
   align-items: center;
-  color: var(--navy-blue); /* text color */
+  color: var(--navy-blue);
 }
 
 .contact-icon {
   margin-right: 10px;
   font-size: 1.2em;
-  color: var(--ocean-blue); /* icons are clickable */
+  color: var(--ocean-blue); /* clickable icons */
 }
 
-/* Social Icons */
+/* Social Links */
 .social-icons {
   margin: 25px 0;
 }
@@ -691,19 +604,19 @@ body {
 .social-icons a {
   margin-right: 20px;
   font-size: 1.2em;
-  color: var(--ocean-blue); /* clickable links */
+  color: var(--ocean-blue);
   text-decoration: none;
 }
 
-/* Buttons */
+/* Download / Submit Buttons */
 .download-btn,
 .submit-btn {
   text-decoration: none;
   align-self: flex-start;
   padding: 12px 28px;
   font-size: 1em;
-  background-color: var(--ocean-blue); /* button bg */
-  color: white;                        /* button text */
+  background-color: var(--ocean-blue);
+  color: white;
   border: none;
   border-radius: 6px;
   font-weight: bold;
@@ -717,7 +630,7 @@ body {
   text-decoration: underline;
 }
 
-/* Contact Form Column */
+/* Contact Form */
 .contact-form {
   flex: 1 1 600px;
   display: flex;
@@ -732,7 +645,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #f9f9f9;
-  color: var(--navy-blue); /* text inside input */
+  color: var(--navy-blue);
 }
 
 .contact-form input::placeholder,
