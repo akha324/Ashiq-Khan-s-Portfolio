@@ -374,51 +374,45 @@ body {
 .project-card {
   position: relative;
   width: 100%;
-  height: 300px;
-  flex: 1 1 30%;
-  background-color: white;
-  color: #0b1c4d;
-  text-decoration: none;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  max-width: 300px;            /* Consistent width */
+  height: 350px;               /* Consistent height */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Keep text at top */
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  color: #0b1c4d;
 }
 
-/* Top half text */
 .card-content {
   position: relative;
   z-index: 2;
-  height: 50%; /* Top half */
-  padding: 20px;
-  text-align: center;
   background-color: white;
+  height: 50%;                 /* Top half */
+  padding: 20px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
 }
 
-/* Bottom half image that slides in */
 .card-image {
   position: absolute;
-  top: 50%; /* start from halfway down */
+  bottom: -50%;                /* Hide lower half initially */
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   z-index: 1;
-  transform: translateY(100%);  /* Hide it completely */
-  transition: transform 0.3s ease;
+  transition: bottom 0.4s ease;
+  opacity: 0.9;
 }
 
 .project-card:hover .card-image {
-  transform: translateY(0%); /* Slide up to reveal bottom half */
+  bottom: 0;                   /* Reveal full image */
 }
-
 
 /* Text stays on top */
 .card-content {
