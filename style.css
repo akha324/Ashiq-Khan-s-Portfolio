@@ -126,22 +126,24 @@ header {
 }
 
 .about-slide.active {
-  display: block;
+  display: flex;
 }
 
 .slide-content {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Ensures equal height columns */
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto 40px auto;
+  min-height: 400px; /* Uniform height for all slides */
 }
 
 .about-bubble {
   font-size: 1em;
   padding: 25px 30px;
+  width: 100%;
   max-width: 500px;
   color: #000;
   background: rgba(255, 255, 255, 0.96);
@@ -150,6 +152,9 @@ header {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   flex: 1 1 300px;
   min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-bubble h3 {
@@ -165,6 +170,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100%;
 }
 
 .image-section img {
@@ -172,6 +178,7 @@ header {
   max-width: 280px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
 
 .about-arrows {
