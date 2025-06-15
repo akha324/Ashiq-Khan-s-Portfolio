@@ -131,30 +131,30 @@ header {
 
 .slide-content {
   display: flex;
-  align-items: stretch; /* Ensures equal height columns */
+  align-items: stretch;        /* Match height of children */
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;           /* Keep image and bubble side-by-side */
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto 40px auto;
-  min-height: 400px; /* Uniform height for all slides */
+  height: 100%;                /* Full height available */
+  min-height: 450px;           /* Fixed height for consistent appearance */
 }
 
 .about-bubble {
-  font-size: 1em;
+  flex: 1;
   padding: 25px 30px;
-  width: 100%;
-  max-width: 500px;
   color: #000;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 16px;
   line-height: 1.7;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  flex: 1 1 300px;
-  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 100%;            /* Forces height match */
+  max-height: 100%;            /* Prevent overflow */
+  box-sizing: border-box;
 }
 
 .about-bubble h3 {
@@ -166,21 +166,23 @@ header {
 }
 
 .image-section {
-  flex: 1 1 300px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100%;
+  max-height: 100%;
 }
 
 .image-section img {
   width: 100%;
   max-width: 280px;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
 }
 
+/* Arrow and Dot Navigation */
 .about-arrows {
   position: absolute;
   top: 50%;
