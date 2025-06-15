@@ -391,8 +391,8 @@ body {
 .card-content {
   position: relative;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.95);
-  height: 50%;
+  background-color: white;
+  height: 100%;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
@@ -401,10 +401,10 @@ body {
 /* Bottom half: hidden image */
 .card-image {
   position: absolute;
-  top: 100%;            /* start fully hidden below card */
+  top: 100%;           /* completely outside the card */
   left: 0;
   width: 100%;
-  height: 50%;          /* slide up halfway */
+  height: 50%;          /* only want to reveal half */
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -413,7 +413,7 @@ body {
 }
 
 .project-card:hover .card-image {
-  top: 50%;             /* on hover, reveal bottom half */
+  top: 50%;
 }
 
 /* Optional white mask if needed */
