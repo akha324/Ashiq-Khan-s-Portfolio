@@ -371,44 +371,45 @@ body {
   display: flex;
 }
 
+/* ---------------- PROJECT CARD ---------------- */
 .project-card {
   position: relative;
   flex: 1 1 30%;
-  height: 300px;
-  background-color: white;
+  height: 300px;               /* fixed height for demo */
+  background: #fff;            /* card stays white */
   color: #0b1c4d;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden;            /* hide anything outside */
   text-decoration: none;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform .3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
 }
 
-/* Content sits above the image */
+/* ---------- TEXT AREA (no white box overlay) ---------- */
 .card-content {
-  position: relative;
-  z-index: 2;
-  height: 60%;               /* fixed top 60% stays visible */
-  background-color: white;
-  padding: 20px;
+  z-index: 2;                  /* above image */
+  padding: 30px 20px;
   box-sizing: border-box;
   text-align: center;
+  width: 100%;
+  /* no background and no fixed height → card itself supplies white */
 }
 
+/* ---------- IMAGE: slides up only into bottom 40 % ---------- */
 .card-image {
   position: absolute;
-  bottom: -100%;             /* start fully hidden below card */
   left: 0;
+  bottom: -40%;               /* hidden below card */
   width: 100%;
-  height: 100%;              /* full card height */
+  height: 40%;                /* image is 40 % tall */
   background-size: cover;
   background-position: center;
-  transition: bottom 0.4s ease;
-  z-index: 1;                /* under content */
+  transition: bottom .3s ease;
+  z-index: 1;                 /* under text */
 }
 
 .project-card:hover .card-image {
-  bottom: 0;                   /* slides up fully */
+  bottom: 0;                  /* reveal into bottom 40 % */
 }
 
 .image-mask {
