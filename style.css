@@ -630,7 +630,7 @@ body {
   text-decoration: underline;
 }
 
-/* Contact Form */
+/* Contact Form Column */
 .contact-form {
   flex: 1 1 600px;
   display: flex;
@@ -644,11 +644,12 @@ body {
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background-color: #f9f9f9;
-  color: var(--navy-blue);
+  background-color: var(--navy-blue);  /* box is navy blue */
+  color: white;                        /* text inside input */
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #666666;
+  color: rgba(255, 255, 255, 0.85);    /* lighter white for placeholder */
 }
+
