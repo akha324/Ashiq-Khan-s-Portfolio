@@ -491,7 +491,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start; /* <-- added to top-align both columns */
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -499,7 +498,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
 
 /* Responsive layout */
 @media (max-width: 768px) {
@@ -591,4 +589,3 @@ body {
 .contact-form textarea::placeholder {
   color: rgba(255, 255, 255, 0.85);    /* lighter white for placeholder */
 }
-
