@@ -397,7 +397,7 @@ body {
 
 .card-image {
   position: absolute;
-  top: 100%;              /* fully hidden */
+  top: 100%;
   left: 0;
   width: 100%;
   height: 50%;
@@ -409,7 +409,7 @@ body {
 }
 
 .project-card:hover .card-image {
-  top: 50%;               /* reveal halfway on hover */
+  top: 50%;
 }
 
 /* Optional white mask if needed */
