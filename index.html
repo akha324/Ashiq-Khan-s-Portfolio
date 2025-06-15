@@ -380,22 +380,22 @@
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
   <div class="contact-wrapper">
-    
+
     <!-- Info column -->
     <div class="contact-info">
       <h2>Contact Me</h2>
-      
+
       <p>
-        <a href="mailto:ASHIQ.KHAN79@qmail.cuny.edu" style="text-decoration: none; color: inherit;">
+        <a href="mailto:ASHIQ.KHAN79@qmail.cuny.edu" aria-label="Send Email">
           <i class="fas fa-envelope contact-icon" style="cursor: pointer;"></i>
         </a>
-        <span>ASHIQ.KHAN79@qmail.cuny.edu</span>
+        ASHIQ.KHAN79@qmail.cuny.edu
       </p>
       <p>
-        <a href="tel:+19178265205" style="text-decoration: none; color: inherit;">
+        <a href="tel:+19178265205" aria-label="Call Phone">
           <i class="fas fa-phone contact-icon" style="cursor: pointer;"></i>
         </a>
-        <span>917-826-5205</span>
+        917-826-5205
       </p>
 
       <!-- Social icons -->
@@ -411,10 +411,16 @@
     </div>
 
     <!-- Form column -->
-    <form class="contact-form" aria-label="Contact form">
+    <form action="https://formsubmit.co/ASHIQ.KHAN79@qmail.cuny.edu" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <!-- Optional hidden fields for extra behavior -->
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_subject" value="New Contact Form Submission" />
+
       <button type="submit" class="submit-btn">Submit</button>
     </form>
   </div>
@@ -425,32 +431,6 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
-
-<!-- ========== ACTIVE LINK SCROLL SCRIPT ========== -->
-<script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-links a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
-
 
   </body>
 </html>      
