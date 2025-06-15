@@ -371,12 +371,11 @@ body {
   display: flex;
 }
 
-/* ---------- Project Card ---------- */
 .project-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  /* aligns content to top */
+  justify-content: flex-start;
   align-items: center;
   flex: 1 1 30%;
   min-height: 300px;
@@ -387,7 +386,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  padding: 30px 20px;           /* add spacing inside card */
+  padding: 30px 20px;
 }
 
 .project-card:hover .card-image {
@@ -408,19 +407,18 @@ body {
 
 .card-image {
   position: absolute;
-  bottom: -50%; /* start image hidden halfway */
+  bottom: -50%;           /* Start hidden below */
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 50%;            /* Only slide into bottom half */
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
   opacity: 0.9;
   transition: bottom 0.3s ease;
+  z-index: 0;             /* Stay behind text */
 }
-
 .project-card:hover .card-image {
-  bottom: 0; /* reveal image to halfway point */
+  bottom: 0;              /* Slides up to sit under content */
 }
 
 /* individual project images */
