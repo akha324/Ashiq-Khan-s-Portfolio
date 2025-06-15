@@ -394,15 +394,12 @@ body {
   clip-path: inset(50% 0 0 0); /* show only top 50% */
 }
 
-/* Content inside the card */
 .card-content {
   position: relative;
   z-index: 2;
-  background: none;
-  padding: 0;
-  border-radius: 0;
   text-align: center;
   width: 100%;
+  background-color: white; /* Ensure background blocks image */
 }
 
 .card-image {
