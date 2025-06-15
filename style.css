@@ -573,6 +573,13 @@ body {
   cursor: pointer;
 }
 
+/* ---------- Global palette ---------- */
+:root {
+  --ocean-blue: #0077ff;          /* button background */
+  --bg-opacity: 0.25;             /* contact bg dimness */
+}
+
+/* ---------- Contact form ---------- */
 .contact-form {
   flex: 1 1 600px;
   display: flex;
@@ -586,8 +593,8 @@ body {
   font-size: 1em;
   border: none;
   border-radius: 6px;
-  background-color: #0a1a44; /* Navy blue */
-  color: white;
+  background-color: #0a1a44;      /* navy blue */
+  color: #fff;
 }
 
 .contact-form input::placeholder,
@@ -595,42 +602,51 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* ---------- Buttons (Download + Submit) ---------- */
+.download-btn,
 .submit-btn {
+  text-decoration: none;          /* no underline by default */
   align-self: flex-start;
   padding: 12px 28px;
   font-size: 1em;
   background-color: var(--ocean-blue);
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  display: inline-block;
+  transition: text-decoration 0.2s ease;
 }
 
+.download-btn:hover,
+.submit-btn:hover {
+  text-decoration: underline;     /* only on hover */
+}
+
+/* ---------- Contact section background ---------- */
 #contact {
   position: relative;
-  background-color: white;
+  background-color: #fff;
   overflow: hidden;
 }
 
 #contact::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: url('https://st4.depositphotos.com/8211188/20291/i/450/depositphotos_202918032-stock-photo-molecular-structure-background-abstract-background.jpg');
+  background-image: url("https://st4.depositphotos.com/8211188/20291/i/450/depositphotos_202918032-stock-photo-molecular-structure-background-abstract-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scaleX(-1); /* Flip horizontally */
+  transform: scaleX(-1);          /* optional mirror */
+  opacity: var(--bg-opacity);     /* easy to adjust */
   z-index: 0;
-  opacity: 1;
 }
 
+/* make sure the real content sits above the bg */
 #contact > * {
   position: relative;
   z-index: 1;
 }
-#contact > * {
-  position: relative;
-  z-index: 1;
-}
+
