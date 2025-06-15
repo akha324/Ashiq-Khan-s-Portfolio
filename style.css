@@ -373,47 +373,42 @@ body {
 
 .project-card {
   position: relative;
-  width: 100%;
   max-width: 300px;
   height: 350px;
-  overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  background-color: white;
   text-decoration: none;
   color: #0b1c4d;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 /* Top half: text block */
 .card-content {
-  position: relative;
-  z-index: 2;
-  background-color: white;
   height: 100%;
   padding: 20px;
-  box-sizing: border-box;
+  z-index: 2;
+  position: relative;
   text-align: center;
+  background-color: white;
 }
 
 /* Bottom half: hidden image */
 .card-image {
   position: absolute;
-  top: 100%;             /* Keep fully hidden at rest */
+  top: 100%;              /* fully hidden */
   left: 0;
   width: 100%;
-  height: 50%;           /* Only bottom half of card shows on hover */
+  height: 50%;            /* reveal only bottom half */
   background-size: cover;
   background-position: center;
-  z-index: 1;
   opacity: 0.9;
+  z-index: 1;
   transition: top 0.4s ease;
 }
 
 .project-card:hover .card-image {
-  top: 50%;              /* Slide image into bottom half on hover */
+  top: 50%;               /* slide halfway up on hover */
 }
 
 /* Optional white mask if needed */
