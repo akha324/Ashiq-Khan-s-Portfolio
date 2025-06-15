@@ -131,30 +131,30 @@ header {
 
 .slide-content {
   display: flex;
-  align-items: stretch;        /* Match height of children */
+  align-items: stretch; /* Ensures equal height columns */
   justify-content: center;
-  flex-wrap: nowrap;           /* Keep image and bubble side-by-side */
+  flex-wrap: wrap;
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto 40px auto;
-  height: 100%;                /* Full height available */
-  min-height: 450px;           /* Fixed height for consistent appearance */
+  min-height: 400px; /* Uniform height for all slides */
 }
 
 .about-bubble {
-  flex: 1;
+  font-size: 1em;
   padding: 25px 30px;
+  width: 100%;
+  max-width: 500px;
   color: #000;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 16px;
   line-height: 1.7;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100%;            /* Forces height match */
-  max-height: 100%;            /* Prevent overflow */
-  box-sizing: border-box;
 }
 
 .about-bubble h3 {
@@ -166,23 +166,21 @@ header {
 }
 
 .image-section {
-  flex: 1;
+  flex: 1 1 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100%;
-  max-height: 100%;
 }
 
 .image-section img {
   width: 100%;
   max-width: 280px;
-  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
 
-/* Arrow and Dot Navigation */
 .about-arrows {
   position: absolute;
   top: 50%;
@@ -541,43 +539,18 @@ body {
   color: var(--navy-blue);
 }
 
-/* ===== CONTACT SECTION ===== */
 .contact-section {
-  /* Put your own path or URL here */
-  background: url("images/contact-bg.jpg") center / cover no-repeat fixed;
-  /* ^ center = centers the picture
-     / cover  = fills the width & height without distortion
-     no-repeat = stops tiling
-     fixed     = creates a subtle parallax effect (optional) */
-
-  /* Give the section enough height & spacing so the image is visible */
-  padding: 80px 0;          /* top/bottom breathing room */
-  position: relative;       /* needed for overlay + absolute children */
-  color: #fff;              /* white text shows up on dark photo */
-}
-
-/* OPTIONAL – dark overlay so text/forms pop */
-.contact-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55); /* tweak darkness here */
-  z-index: 0;                   /* sits underneath real content */
+  padding: 80px 40px;
 }
 
 .contact-wrapper {
-  position: relative;   /* puts real content above overlay */
-  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 60px;
 }
-
-/* keep form + info tidy on narrow screens */
-@media (max-width: 768px) {
-  .contact-wrapper {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
-
 
 .contact-info {
   flex: 1 1 300px;
