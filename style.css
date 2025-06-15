@@ -334,14 +334,13 @@ body {
 .portfolio-section {
   background-color: #0b1c4d;
   color: white;
-  /* more breathing space above (100) and below (120) */
   padding: 100px 20px 120px;
   text-align: center;
 }
 
 .portfolio-heading {
   font-size: 3rem;
-  margin: 0 0 60px;   /* top 0, bottom 60 */
+  margin: 0 0 60px;
   font-weight: bold;
 }
 
@@ -352,7 +351,7 @@ body {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;    /* prevents cards from hugging viewport edges */
+  padding: 0 20px;
 }
 
 .portfolio-slider {
@@ -368,13 +367,17 @@ body {
   gap: 30px;
   animation: fadeIn 0.3s ease-in-out;
 }
-.portfolio-slide.active { display: flex; }
+.portfolio-slide.active {
+  display: flex;
+}
 
 /* ---------- Project Card ---------- */
 .project-card {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;  /* aligns content to top */
+  align-items: center;
   flex: 1 1 30%;
   min-height: 300px;
   background-color: white;
@@ -384,15 +387,21 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 30px 20px;           /* add spacing inside card */
 }
-.project-card:hover { transform: scale(1.03); }
+.project-card:hover {
+  transform: scale(1.03);
+}
 
+/* Content inside the card */
 .card-content {
   position: relative;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 20px;
-  border-radius: 10px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
 }
 
 /* hidden image that slides up on hover */
@@ -408,7 +417,9 @@ body {
   opacity: 0.9;
   transition: bottom 0.3s ease;
 }
-.project-card:hover .card-image { bottom: 0; }
+.project-card:hover .card-image {
+  bottom: 0;
+}
 
 /* individual project images */
 .card-image.connect4  { background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api'); }
@@ -419,32 +430,32 @@ body {
 .card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
 
 /* “Empty” placeholder card */
-.project-card.empty{
-  background:#344e86;
-  color:#d0d0d0;
-  pointer-events:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.2em;
+.project-card.empty {
+  background: #344e86;
+  color: #d0d0d0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
 }
 
 /* ---------- Navigation Arrows ---------- */
-.portfolio-nav{
-  background:none;
-  border:none;
-  font-size:2.5em;
-  color:white;
-  cursor:pointer;
-  padding:10px;
-  margin-top:40px;   /* gap between cards and arrows */
-  user-select:none;
+.portfolio-nav {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 40px;
+  user-select: none;
 }
 
 /* ---------- Animations ---------- */
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* -----------------------------------------------------
