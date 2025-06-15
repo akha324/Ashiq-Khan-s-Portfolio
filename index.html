@@ -380,18 +380,26 @@
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
   <div class="contact-wrapper">
+    
     <!-- Info column -->
     <div class="contact-info">
       <h2>Contact Me</h2>
-      <p><i class="fas fa-envelope contact-icon"></i> ASHIQ.KHAN79@qmail.cuny.edu</p>
-      <p><i class="fas fa-phone contact-icon"></i> 917-826-5205</p>
+      
+      <p>
+        <i class="fas fa-envelope contact-icon"></i>
+        <a href="mailto:ASHIQ.KHAN79@qmail.cuny.edu">ASHIQ.KHAN79@qmail.cuny.edu</a>
+      </p>
+      <p>
+        <i class="fas fa-phone contact-icon"></i>
+        <a href="tel:+19178265205">917-826-5205</a>
+      </p>
 
       <!-- Social icons -->
       <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.snapchat.com" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
 
       <!-- Download CV -->
@@ -399,10 +407,10 @@
     </div>
 
     <!-- Form column -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
+    <form class="contact-form" aria-label="Contact form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit" class="submit-btn">Submit</button>
     </form>
   </div>
