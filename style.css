@@ -541,18 +541,43 @@ body {
   color: var(--navy-blue);
 }
 
+/* ===== CONTACT SECTION ===== */
 .contact-section {
-  padding: 80px 40px;
+  /* Put your own path or URL here */
+  background: url("images/contact-bg.jpg") center / cover no-repeat fixed;
+  /* ^ center = centers the picture
+     / cover  = fills the width & height without distortion
+     no-repeat = stops tiling
+     fixed     = creates a subtle parallax effect (optional) */
+
+  /* Give the section enough height & spacing so the image is visible */
+  padding: 80px 0;          /* top/bottom breathing room */
+  position: relative;       /* needed for overlay + absolute children */
+  color: #fff;              /* white text shows up on dark photo */
+}
+
+/* OPTIONAL – dark overlay so text/forms pop */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* tweak darkness here */
+  z-index: 0;                   /* sits underneath real content */
 }
 
 .contact-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: 0 auto;
-  justify-content: space-between;
-  gap: 60px;
+  position: relative;   /* puts real content above overlay */
+  z-index: 1;
 }
+
+/* keep form + info tidy on narrow screens */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
 
 .contact-info {
   flex: 1 1 300px;
