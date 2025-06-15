@@ -578,6 +578,7 @@ body {
   }
 }
 
+
 .contact-info {
   flex: 1 1 300px;
 }
@@ -599,16 +600,6 @@ body {
   margin-right: 10px;
   font-size: 1.2em;
   color: var(--ocean-blue);
-}
-
-.contact-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("images/gray-net.png") repeat;
-  opacity: 0.2; /* Adjust to control visibility */
-  z-index: 1;
-  pointer-events: none;
 }
 
 .social-icons {
