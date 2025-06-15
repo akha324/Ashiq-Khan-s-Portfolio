@@ -287,25 +287,62 @@
   </div>
 </section>
 
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section">
+  <h2 class="services-heading">Our Services</h2>
+  <div class="services-grid">
+    <a href="#" class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4269/4269613.png" alt="Coding" class="service-icon" />
+      <h3>Coding</h3>
+      <p>Clean, efficient, and scalable code written in modern languages.</p>
+    </a>
+    <a href="#" class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721298.png" alt="Web Development" class="service-icon" />
+      <h3>Web Development</h3>
+      <p>Responsive and user-friendly websites built with HTML, CSS, JS.</p>
+    </a>
+    <a href="#" class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4048/4048619.png" alt="Debugging" class="service-icon" />
+      <h3>Debugging</h3>
+      <p>Spotting and fixing issues fast using efficient debugging tools.</p>
+    </a>
+    <a href="#" class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3579/3579996.png" alt="Documentation" class="service-icon" />
+      <h3>Documentation</h3>
+      <p>Well‑organized and helpful documentation for long‑term maintenance.</p>
+    </a>
+    <a href="#" class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4366/4366909.png" alt="Problem Solving" class="service-icon" />
+      <h3>Problem Solving</h3>
+      <p>Creative and logical approaches to tackle technical challenges.</p>
+    </a>
+    <a href="#" class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="Design" class="service-icon" />
+      <h3>Graphical Design</h3>
+      <p>Crafting beautiful visuals that align with your brand and message.</p>
+    </a>
+  </div>
+</section>
+
 <!-- PORTFOLIO SECTION -->
 <section id="portfolio" class="portfolio-section">
   <h2 class="portfolio-heading">My Projects</h2>
   <div class="portfolio-container">
     <button class="portfolio-nav left" onclick="slideProjects(-1)">&#10094;</button>
-    <div class="portfolio-slider">
 
+    <div class="portfolio-slider">
       <div class="portfolio-slide">
         <a href="connect4.cpp" download class="project-card">
           <div class="card-content">
-            <h3>Connect 4</h3>
-            <p>Challenge a friend or the computer in a classic game of Connect 4!</p>
+            <h3>Connect 4</h3>
+            <p>Challenge a friend or the computer in a classic game!</p>
           </div>
           <div class="card-image connect4"></div>
         </a>
 
         <a href="scoreTheRace.cpp" download class="project-card">
           <div class="card-content">
-            <h3>Score the Race</h3>
+            <h3>Score the Race</h3>
             <p>Calculate race scores and determine the winner fairly.</p>
           </div>
           <div class="card-image race"></div>
@@ -313,8 +350,8 @@
 
         <a href="eightQueens.cpp" download class="project-card">
           <div class="card-content">
-            <h3>The 8 Queens</h3>
-            <p>Brute-force solution to the classic chess puzzle.</p>
+            <h3>The 8 Queens</h3>
+            <p>Brute‑force solution to the classic chess puzzle.</p>
           </div>
           <div class="card-image queens"></div>
         </a>
@@ -323,7 +360,7 @@
       <div class="portfolio-slide">
         <a href="thousandGames.java" download class="project-card">
           <div class="card-content">
-            <h3>The Thousand Game</h3>
+            <h3>The Thousand Game</h3>
             <p>Play a numbers challenge to reach one thousand!</p>
           </div>
           <div class="card-image thousand"></div>
@@ -331,7 +368,7 @@
 
         <a href="countE.java" download class="project-card">
           <div class="card-content">
-            <h3>Count the E’s</h3>
+            <h3>Count the E’s</h3>
             <p>Spot every “E” in a tricky text puzzle.</p>
           </div>
           <div class="card-image count-e"></div>
@@ -339,42 +376,50 @@
 
         <a href="Project2.java" download class="project-card">
           <div class="card-content">
-            <h3>Sort the Clocks</h3>
+            <h3>Sort the Clocks</h3>
             <p>Arrange clock faces in sorted order visually.</p>
           </div>
           <div class="card-image clocks"></div>
         </a>
       </div>
-
     </div>
+
     <button class="portfolio-nav right" onclick="slideProjects(1)">&#10095;</button>
   </div>
 </section>
 
+<style>
+/* --- Services Grid --- */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px}
+.service-card{background:#fff;border-radius:12px;text-align:center;padding:24px;box-shadow:0 4px 12px rgba(0,0,0,.05);color:#0b1c4d;text-decoration:none;transition:transform .25s}
+.service-card:hover{transform:translateY(-6px)}
+.service-icon{width:64px;height:64px;margin-bottom:16px}
+
+/* --- Portfolio Slider --- */
+.portfolio-container{display:flex;align-items:center;gap:10px}
+.portfolio-slider{width:100%;overflow:hidden}
+.portfolio-slide{display:none;gap:20px;justify-content:center}
+.portfolio-slide.active{display:flex}
+.portfolio-nav{background:#0b1c4d;color:#fff;border:none;padding:12px 18px;border-radius:50%;cursor:pointer;transition:background .3s}
+.portfolio-nav:hover{background:#18317c}
+
+.project-card{position:relative;max-width:300px;width:100%;height:350px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.06);text-decoration:none;display:block;color:#0b1c4d}
+.card-content{position:relative;z-index:2;padding:20px;height:100%;box-sizing:border-box;text-align:center;background:#fff}
+.card-image{position:absolute;top:100%;left:0;width:100%;height:50%;background-size:cover;background-position:center;opacity:.9;z-index:1;transition:top .4s ease}
+.project-card:hover .card-image{top:50%}
+
+.card-image.connect4{background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api')}
+.card-image.race{background-image:url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api')}
+.card-image.queens{background-image:url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png')}
+.card-image.thousand{background-image:url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg')}
+.card-image.count-e{background-image:url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api')}
+.card-image.clocks{background-image:url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api')}
+</style>
+
 <script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.portfolio-slide');
-
-  function showSlide(index) {
-    slides.forEach((slide) => {
-      slide.classList.remove('active');
-      slide.style.display = 'none';
-    });
-    slides[index].classList.add('active');
-    slides[index].style.display = 'flex';
-  }
-
-  function slideProjects(direction) {
-    currentSlide += direction;
-    if (currentSlide < 0) currentSlide = slides.length - 1;
-    else if (currentSlide >= slides.length) currentSlide = 0;
-    showSlide(currentSlide);
-  }
-
-  // Initialize
-  slides.forEach((slide) => (slide.style.display = 'none'));
-  showSlide(currentSlide);
+let currentSlide=0;const slides=document.querySelectorAll('.portfolio-slide');function showSlide(i){slides.forEach(s=>s.style.display='none');slides[i].style.display='flex'}function slideProjects(d){currentSlide=(currentSlide+d+slides.length)%slides.length;showSlide(currentSlide);}showSlide(currentSlide);
 </script>
+
 
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
