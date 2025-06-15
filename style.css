@@ -252,9 +252,9 @@ body {
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);   /* 3 columns */
-  grid-auto-rows: 1fr;                     /* equal height rows */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
@@ -271,6 +271,20 @@ body {
   align-items: center;
   justify-content: flex-start;
   height: 100%;
+  width: calc(33.333% - 27px); /* 3 cards per row with spacing */
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .service-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    width: 100%;
+  }
 }
 
 .service-card:hover {
