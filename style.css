@@ -373,42 +373,44 @@ body {
 
 .project-card {
   position: relative;
+  width: 100%;
   max-width: 300px;
   height: 350px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  border-radius: 12px;
   background-color: white;
-  text-decoration: none;
   color: #0b1c4d;
+  text-decoration: none;
+  display: block;
 }
 
 /* Top half: text block */
 .card-content {
-  height: 100%;
-  padding: 20px;
-  z-index: 2;
   position: relative;
-  text-align: center;
+  z-index: 2;
+  padding: 20px;
+  height: 100%;
   background-color: white;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* Bottom half: hidden image */
 .card-image {
   position: absolute;
-  top: 100%;              /* fully hidden */
+  top: 100%;          /* not visible */
   left: 0;
   width: 100%;
-  height: 50%;            /* reveal only bottom half */
+  height: 50%;         /* only bottom half will slide in */
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
-  z-index: 1;
   transition: top 0.4s ease;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 .project-card:hover .card-image {
-  top: 50%;               /* slide halfway up on hover */
+  top: 50%;
 }
 
 /* Optional white mask if needed */
