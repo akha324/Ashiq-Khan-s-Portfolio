@@ -303,7 +303,7 @@ body {
 .services-heading {
   font-size: 36px;
   color: #0a1a44;
-  margin-bottom: 50px;
+  margin-bottom: 30px; /* was 50px */
   font-weight: bold;
 }
 
