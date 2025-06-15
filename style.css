@@ -389,8 +389,10 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   padding: 30px 20px;           /* add spacing inside card */
 }
-.project-card:hover {
-  transform: scale(1.03);
+
+.project-card:hover .card-image {
+  bottom: 0;
+  clip-path: inset(50% 0 0 0); /* show only top 50% */
 }
 
 /* Content inside the card */
