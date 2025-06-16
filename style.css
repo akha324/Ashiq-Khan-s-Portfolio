@@ -349,7 +349,6 @@ header {
   display: flex;
 }
 
-/* ---------- PROJECT CARD ---------- */
 .project-card {
   position: relative;
   width: 100%;
@@ -364,7 +363,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  z-index: 0;
 }
 
 .card-content {
@@ -373,12 +371,12 @@ header {
   text-align: center;
   box-sizing: border-box;
   position: relative;
-  z-index: 3; /* Make sure text is above everything */
+  z-index: 3; /* Make text appear above image and mask */
 }
 
 .card-image {
   position: absolute;
-  bottom: -50%; /* start hidden */
+  bottom: -100%; /* fully hidden initially */
   left: 0;
   width: 100%;
   height: 100%;
@@ -389,12 +387,10 @@ header {
 }
 
 .project-card:hover .card-image {
-  bottom: 0; /* slide up to show bottom half */
-}
+  bottom: 0; /* fully slide image up */
 
-/* Mask that hides the top half of the image */
-.project-card::before {
-  content: "";
+/* White mask that hides top 50% of image */
+.project-card .mask {
   position: absolute;
   top: 0;
   height: 50%;
@@ -403,6 +399,7 @@ header {
   z-index: 2;
   pointer-events: none;
 }
+
 
 /* ---- individual images ---- */
 .card-image.connect4 {background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');}
