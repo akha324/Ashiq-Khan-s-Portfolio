@@ -349,53 +349,58 @@ header {
   display: flex;
 }
 
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-decoration: none;
-  color: #0b1c4d;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+/* ---------- PROJECT CARD ---------- */
+.project-card{
+  position:relative;
+  width:100%;
+  max-width:300px;
+  height:350px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  text-decoration:none;
+  color:#0b1c4d;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;              /* clips anything outside the card */
 }
 
-/* Title + text */
-.card-content {
-  z-index: 2;
-  padding: 20px;
-  text-align: center;
-  background-color: white;
-  flex: 1;
-  box-sizing: border-box;
+/* title + description */
+.card-content{
+  padding:20px;
+  text-align:center;
+  flex:1;
+  z-index:2;
+  background:#fff;
+  box-sizing:border-box;
 }
 
-/* Wrapper to clip visible area */
-.image-wrapper {
-  position: relative;
-  height: 50%;         /* Only show the top half of the image */
-  overflow: hidden;
+/* wrapper that clips to 0 px high by default */
+.image-wrapper{
+  height:0;                     /* <- nothing visible at rest */
+  overflow:hidden;
+  position:relative;
+  transition:height .45s ease;  /* smooth reveal */
 }
 
-/* Full image hidden below initially */
-.card-image {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: top;
-  transition: top 0.4s ease;
+/* full-height image that will slide upward */
+.card-image{
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-size:cover;
+  background-position:top;
+  transform:translateY(100%);   /* start below wrapper */
+  transition:transform .45s ease;
 }
 
-/* On hover, slide the image up */
-.project-card:hover .card-image {
-  top: 0;
+/* ---------- HOVER EFFECT ---------- */
+.project-card:hover .image-wrapper{
+  height:50%;                    /* reveal only half of card height */
+}
+
+.project-card:hover .card-image{
+  transform:translateY(0);       /* slide full image upward */
 }
 
 /* Individual project images */
