@@ -401,7 +401,7 @@ header {
 
 /* ---------- HOVER EFFECT ---------- */
 .project-card:hover .image-wrapper{
-  height:50%;                    /* reveal only half of card height */
+  height:100%;                    /* reveal only half of card height */
 }
 
 .project-card:hover .card-image{
