@@ -228,39 +228,23 @@ header {
   background-color: #ffffff;
 }
 
-./* ---------- Global ---------- */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Cards with fixed height + full size alignment */
+/* SERVICE SECTION */
+/* Individual Service Card */
 .service-card {
   background-color: #f9f9f9;
+  width: 300px;
+  height: 300px;
+  padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
-  height: 300px;                /* Fixed height for visual balance */
-  min-height: 300px;
-  width: 100%;                  /* Let grid control column size */
-  box-sizing: border-box;
-  padding: 30px 20px;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover {
@@ -282,19 +266,20 @@ body {
 .service-card p {
   font-size: 14px;
   color: #444;
+  text-align: center;
   margin: 0;
 }
 
-/* Responsive rows */
+/* Optional: Responsive Adjustments */
 @media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .service-card {
+    width: 45%;
   }
 }
 
 @media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-card {
+    width: 100%;
   }
 }
 
