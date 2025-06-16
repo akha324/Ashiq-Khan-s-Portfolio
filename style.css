@@ -376,18 +376,18 @@ header {
 
 .card-image {
   position: absolute;
-  top: 100%;              /* Start completely hidden below card */
+  bottom: -50%;              /* Hidden below the card */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: top 0.4s ease;
-  z-index: 3;
+  transition: bottom 0.4s ease;
+  z-index: 1;
 }
 
 .project-card:hover .card-image {
-  top: 0;                /* Slide full image up */
+  bottom: 0;                 /* Slide halfway up */
 }
 
 /* Individual project images */
@@ -398,7 +398,6 @@ header {
 .card-image.count-e   { background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api'); }
 .card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
 
-/* Placeholder card */
 .project-card.empty {
   background: #344e86;
   color: #d0d0d0;
@@ -409,7 +408,6 @@ header {
   font-size: 1.2em;
 }
 
-/* ---------- Navigation Arrows ---------- */
 .portfolio-nav {
   background: none;
   border: none;
@@ -421,7 +419,6 @@ header {
   user-select: none;
 }
 
-/* ---------- Animations ---------- */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
