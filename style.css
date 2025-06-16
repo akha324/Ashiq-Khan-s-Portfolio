@@ -360,38 +360,36 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   text-decoration: none;
   color: #0b1c4d;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  justify-content: flex-start;
 }
 
-/* Title + Description Area */
 .card-content {
+  z-index: 2;
   padding: 20px;
   text-align: center;
   flex: 1;
-  z-index: 2;
-  background: #fff;
+  background: white;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Image sits on top of everything and fills the whole card */
 .card-image {
   position: absolute;
-  top: 100%;
+  bottom: -100%; /* Start completely hidden */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: top 0.4s ease;
-  z-index: 3;
+  transition: bottom 0.4s ease;
+  z-index: 1;
 }
 
-/* On hover, image fully slides up into the card */
 .project-card:hover .card-image {
-  top: 0;
+  bottom: 0; /* Slide image all the way up */
 }
 
 /* Individual project images */
