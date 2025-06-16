@@ -106,18 +106,17 @@ header {
 
 .about-heading {
   font-size: 36px;
-  margin-bottom: 50px;
+  margin: 0 0 50px;
   color: white;
   font-weight: bold;
   text-align: center;
-  margin-top: 0;
 }
 
 .about-slider {
   position: relative;
-  overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .about-slide {
@@ -127,27 +126,31 @@ header {
 
 .about-slide.active {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .slide-content {
   display: flex;
-  align-items: stretch; /* Ensures equal height columns */
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto 40px auto;
-  min-height: 400px; /* Uniform height for all slides */
+  min-height: 400px;
 }
 
 .about-bubble {
   font-size: 1em;
   padding: 25px 30px;
-  width: 100%;
   max-width: 500px;
-  color: #000;
+  width: 100%;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 16px;
+  color: #000;
   line-height: 1.7;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   flex: 1 1 300px;
@@ -158,8 +161,7 @@ header {
 }
 
 .about-bubble h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   font-size: 1.4em;
   font-weight: bold;
   color: #0a1a44;
@@ -190,6 +192,7 @@ header {
   justify-content: space-between;
   transform: translateY(-50%);
   pointer-events: none;
+  z-index: 10;
 }
 
 .about-arrow {
