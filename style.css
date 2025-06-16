@@ -354,7 +354,6 @@ header {
   width: 100%;
   max-width: 300px;
   height: 350px;
-  overflow: hidden; /* hide anything outside */
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -362,34 +361,41 @@ header {
   color: #0b1c4d;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  overflow: hidden;
 }
 
+/* Text content */
 .card-content {
   z-index: 2;
   padding: 20px;
-  background-color: white;
   text-align: center;
-  box-sizing: border-box;
+  background-color: white;
   flex: 1;
+  box-sizing: border-box;
 }
 
-/* ✅ The image starts below the card */
+/* 👇 This wrapper clips the image to top half */
+.image-container {
+  position: relative;
+  height: 50%;
+  overflow: hidden;
+}
+
+/* 👇 Full image starts hidden below, and slides in */
 .card-image {
   position: absolute;
-  top: 100%; /* start completely outside */
+  top: 100%; /* start hidden below */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   transition: top 0.4s ease;
-  z-index: 1;
 }
 
-/* ✅ On hover, slide image up — only top half visible */
+/* 👇 On hover, image slides up and top half becomes visible */
 .project-card:hover .card-image {
-  top: 50%;
+  top: 0;
 }
 
 /* Individual project images */
