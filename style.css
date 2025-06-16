@@ -354,6 +354,7 @@ header {
   width: 100%;
   max-width: 300px;
   height: 350px;
+  overflow: hidden; /* hide anything outside */
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -361,41 +362,34 @@ header {
   color: #0b1c4d;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  justify-content: flex-start;
 }
 
-/* text box */
 .card-content {
   z-index: 2;
-  background: white;
   padding: 20px;
+  background-color: white;
   text-align: center;
-  flex: 1;
   box-sizing: border-box;
+  flex: 1;
 }
 
-/* wrapper clips the image to top half */
-.image-wrapper {
-  height: 50%; /* show only top half of image */
-  overflow: hidden;
-  position: relative;
-}
-
-/* full image, initially in place */
+/* ✅ The image starts below the card */
 .card-image {
   position: absolute;
-  top: 0;
+  top: 100%; /* start completely outside */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: transform 0.4s ease;
+  transition: top 0.4s ease;
+  z-index: 1;
 }
 
-/* slide full image up on hover */
+/* ✅ On hover, slide image up — only top half visible */
 .project-card:hover .card-image {
-  transform: translateY(-50%);
+  top: 50%;
 }
 
 /* Individual project images */
