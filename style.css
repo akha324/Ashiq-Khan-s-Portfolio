@@ -238,9 +238,6 @@ body {
 /* ============================================================= */
 /*  SERVICES SECTION                                             */
 /* ============================================================= */
-/* ============================================================= */
-/*  SERVICES SECTION                                             */
-/* ============================================================= */
 .services-section {
   background-color: #ffffff;
   padding: 80px 40px;
@@ -250,19 +247,35 @@ body {
 .services-heading {
   font-size: 36px;
   color: #0a1a44;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-weight: bold;
 }
 
+/* ---------- GRID ---------- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 per row on desktop */
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);   /* 3 per row on large screens */
+  gap: 40px;                               /* space between cards (row & column) */
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* 2 per row on tablets */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 per row on phones */
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- CARDS ---------- */
 .service-card {
   background-color: #f9f9f9;
   padding: 30px 20px;
@@ -272,21 +285,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: calc(33.333% - 27px); /* 3 per row with spacing */
-  box-sizing: border-box;
-}
-
-@media (max-width: 992px) {
-  .service-card {
-    width: calc(50% - 20px); /* 2 per row */
-  }
-}
-
-@media (max-width: 600px) {
-  .service-card {
-    width: 100%; /* 1 per row */
-  }
 }
 
 .service-card:hover {
@@ -310,12 +308,6 @@ body {
   color: #444;
   margin: 0;
 }
-
-.service-card:hover { transform: scale(0.95); }
-
-.service-icon  { width: 64px; height: 64px; margin-bottom: 20px; }
-.service-card h3 { font-size: 20px; color: #0a1a44; margin-bottom: 10px; }
-.service-card p  { font-size: 14px; color: #444; }
 
 /* ============================================================= */
 /*  PORTFOLIO SECTION                                            */
