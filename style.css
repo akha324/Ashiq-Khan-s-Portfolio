@@ -350,65 +350,69 @@ header {
 }
 
 /* ---------- PROJECT CARD ---------- */
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-decoration: none;
-  color: #0b1c4d;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+/* ─── PROJECT CARD ─────────────────────────────────────────── */
+.project-card{
+  position:relative;
+  width:100%;
+  max-width:300px;
+  height:350px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  text-decoration:none;
+  color:#0b1c4d;
+  overflow:hidden;          /* masks whatever is outside */
 }
 
-.card-content {
-  z-index: 2;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-  box-sizing: border-box;
+/* title + description */
+.card-content{
+  position:relative;
+  z-index:2;
+  padding:20px;
+  text-align:center;
+  background:#fff;
+  box-sizing:border-box;
 }
 
-.card-image {
-  position: absolute;
-  bottom: -100%; /* hidden completely */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: bottom 0.4s ease;
-  z-index: 1;
+/* full-size image (starts completely below the card) */
+.card-image{
+  position:absolute;
+  left:0;
+  bottom:-100%;             /* hidden */
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  transition:bottom .4s ease;
+  z-index:1;
 }
 
-.project-card:hover .card-image {
-  bottom: 0; /* slide all the way up */
+/* slide the image up so it fills the card */
+.project-card:hover .card-image{
+  bottom:0;
 }
 
-/* White overlay that hides the top half */
-.project-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  height: 50%;
-  width: 100%;
-  background: white;
-  z-index: 2;
-  pointer-events: none;
+/* white mask that hides the TOP half of the card,
+   leaving only the BOTTOM half of the image visible */
+.project-card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:50%;
+  background:#fff;
+  z-index:3;
+  pointer-events:none;
 }
 
-/* Individual project images */
-.card-image.connect4  { background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api'); }
-.card-image.race      { background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api'); }
-.card-image.queens    { background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png'); }
-.card-image.thousand  { background-image: url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg'); }
-.card-image.count-e   { background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api'); }
-.card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
+/* ---- individual images ---- */
+.card-image.connect4 {background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');}
+.card-image.race     {background-image:url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');}
+.card-image.queens   {background-image:url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');}
+.card-image.thousand {background-image:url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg');}
+.card-image.count-e  {background-image:url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api');}
+.card-image.clocks   {background-image:url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api');}
 
 .project-card.empty {
   background: #344e86;
