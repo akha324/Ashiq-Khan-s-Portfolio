@@ -389,14 +389,6 @@ header {
   top: 0; /* Slide into view fully */
 }
 
-/* Example background images */
-.card-image.connect4 {
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');
-}
-.card-image.race {
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');
-}
-
 /*  — individual images —  */
 .card-image.connect4 {background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');}
 .card-image.race    {background-image:url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');}
