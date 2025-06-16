@@ -307,7 +307,8 @@
   </div>
 </section>
 
-<!-- ========== PORTFOLIO SECTION (ALL 6 PROJECTS) ========== -->
+<!-- The purpose of this section is to display Ashiq's personal projects with
+     download links and project previews, navigable with left and right arrows. -->
 <section id="portfolio" class="portfolio-section">
   <h2 class="portfolio-heading">My Projects</h2>
 
@@ -315,58 +316,73 @@
     <button class="portfolio-nav left" onclick="slideProjects(-1)">&#10094;</button>
 
     <div class="portfolio-slider">
-      <div class="portfolio-slide" id="slide-1">
-        <!-- PROJECTS 1–3 -->
-        <div class="project-card">
+      <!-- ────── Slide 1 ────── -->
+      <div class="portfolio-slide active">
+
+        <a href="connect4.cpp" download class="project-card">
           <div class="card-content">
             <h3>Connect 4</h3>
             <p>Challenge a friend or the computer in a classic game of Connect 4!</p>
           </div>
-          <div class="card-image connect4"></div>
-        </div>
+          <!-- ⬇ NEW wrapper ➜ shows only top-half of image -->
+          <div class="image-wrapper">
+            <div class="card-image connect4"></div>
+          </div>
+        </a>
 
-        <div class="project-card">
+        <a href="scoreTheRace.cpp" download class="project-card">
           <div class="card-content">
             <h3>Score the Race</h3>
             <p>Calculate race scores and determine the winner fairly.</p>
           </div>
-          <div class="card-image race"></div>
-        </div>
+          <div class="image-wrapper">
+            <div class="card-image race"></div>
+          </div>
+        </a>
 
-        <div class="project-card">
+        <a href="eightQueens.cpp" download class="project-card">
           <div class="card-content">
             <h3>The 8 Queens</h3>
             <p>Brute-force solution to the classic chess puzzle.</p>
           </div>
-          <div class="card-image queens"></div>
-        </div>
+          <div class="image-wrapper">
+            <div class="card-image queens"></div>
+          </div>
+        </a>
       </div>
 
-      <div class="portfolio-slide" id="slide-2">
-        <!-- PROJECTS 4–6 -->
-        <div class="project-card">
+      <!-- ────── Slide 2 ────── -->
+      <div class="portfolio-slide">
+
+        <a href="thousandGames.java" download class="project-card">
           <div class="card-content">
             <h3>The Thousand Game</h3>
             <p>Play a numbers challenge to reach one thousand!</p>
           </div>
-          <div class="card-image thousand"></div>
-        </div>
+          <div class="image-wrapper">
+            <div class="card-image thousand"></div>
+          </div>
+        </a>
 
-        <div class="project-card">
+        <a href="countE.java" download class="project-card">
           <div class="card-content">
             <h3>Count the E’s</h3>
             <p>Spot every “E” in a tricky text puzzle.</p>
           </div>
-          <div class="card-image count-e"></div>
-        </div>
+          <div class="image-wrapper">
+            <div class="card-image count-e"></div>
+          </div>
+        </a>
 
-        <div class="project-card">
+        <a href="Project2.java" download class="project-card">
           <div class="card-content">
             <h3>Sort the Clocks</h3>
             <p>Arrange clock faces in sorted order visually.</p>
           </div>
-          <div class="card-image clocks"></div>
-        </div>
+          <div class="image-wrapper">
+            <div class="card-image clocks"></div>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -374,208 +390,6 @@
   </div>
 </section>
 
-<style>
-.portfolio-section {
-  background-color: #0b1c4d;
-  color: white;
-  padding: 100px 20px 120px;
-  text-align: center;
-}
-
-.portfolio-heading {
-  font-size: 3rem;
-  margin: 0 0 60px;
-  font-weight: bold;
-}
-
-.portfolio-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.portfolio-slider {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-}
-
-.portfolio-slide {
-  display: none;
-  flex: 0 0 100%;
-  justify-content: space-around;
-  gap: 30px;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.portfolio-slide.active {
-  display: flex;
-}
-
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #0b1c4d;
-  cursor: default;
-}
-
-.card-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  transition: opacity 0.4s ease;
-}
-
-.card-image {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: top 0.5s ease;
-  z-index: 1;
-}
-
-.project-card:hover .card-image {
-  top: 0;
-}
-
-.card-image.connect4  { background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api'); }
-.card-image.race      { background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api'); }
-.card-image.queens    { background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png'); }
-.card-image.thousand  { background-image: url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg'); }
-.card-image.count-e   { background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api'); }
-.card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
-
-.portfolio-nav {
-  background: none;
-  border: none;
-  font-size: 2.5em;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  user-select: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-</style>
-
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".portfolio-slide");
-
-function slideProjects(direction) {
-  slides[currentSlide].classList.remove("active");
-  currentSlide += direction;
-  if (currentSlide < 0) currentSlide = slides.length - 1;
-  if (currentSlide >= slides.length) currentSlide = 0;
-  slides[currentSlide].classList.add("active");
-}
-
-// Set first slide visible
-window.addEventListener("DOMContentLoaded", () => {
-  slides[0].classList.add("active");
-});
-</script>
-.portfolio-section {
-  background-color: #0b1c4d;
-  color: white;
-  padding: 100px 20px 120px;
-  text-align: center;
-}
-
-.portfolio-heading {
-  font-size: 3rem;
-  margin: 0 0 60px;
-  font-weight: bold;
-}
-
-.portfolio-container {
-  display: flex;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.portfolio-slider {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  width: 100%;
-}
-
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #0b1c4d;
-  cursor: default;
-}
-
-.card-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  transition: opacity 0.4s ease;
-}
-
-.card-image {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: top 0.5s ease;
-  z-index: 1;
-}
-
-.project-card:hover .card-image {
-  top: 0;
-}
-
-/* Background Images */
-.card-image.connect4  { background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api'); }
-.card-image.race      { background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api'); }
-.card-image.queens    { background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png'); }
-.card-image.thousand  { background-image: url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg'); }
-.card-image.count-e   { background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api'); }
-.card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
-</style>
-  
 <script>
   let currentSlide = 0;
   const slides = document.querySelectorAll('.portfolio-slide');
