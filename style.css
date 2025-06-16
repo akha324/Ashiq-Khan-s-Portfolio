@@ -362,23 +362,92 @@ header {
 }
 
 /* hidden image */
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: #0b1c4d;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  box-sizing: border-box;
+  transition: opacity 0.4s ease;
+}
+
+/* This image is completely hidden by default */
 .card-image {
   position: absolute;
+  bottom: -100%; /* Hidden below card */
   left: 0;
-  bottom: -100%;          /* start fully below the card = invisible */
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: bottom .45s ease;  /* smooth upward slide */
+  transition: bottom 0.4s ease;
+  z-index: 1;
 }
 
-/* hover: slide image upward until it fills the card */
+/* On hover, image slides up to fully cover card, text fades out */
 .project-card:hover .card-image {
   bottom: 0;
 }
 
-/* On hover: image slides up, text fades out */
+.project-card:hover .card-content {
+  opacity: 0;
+}
+
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: #0b1c4d;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card-image {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: bottom 0.4s ease;
+  z-index: 1;
+}
+
+/* hover: slide image upward until it fills the card */
 .project-card:hover .card-image {
   bottom: 0;
 }
