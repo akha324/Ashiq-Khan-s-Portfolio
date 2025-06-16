@@ -364,11 +364,10 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  z-index: 0;
 }
 
 .card-content {
-  z-index: 3; /* ensure text is above the mask */
+  z-index: 2;
   padding: 20px;
   background-color: white;
   text-align: center;
@@ -378,7 +377,7 @@ header {
 
 .card-image {
   position: absolute;
-  bottom: -100%;           /* hidden below */
+  bottom: -100%; /* fully hidden below */
   left: 0;
   width: 100%;
   height: 100%;
@@ -386,21 +385,13 @@ header {
   background-position: center;
   transition: bottom 0.4s ease;
   z-index: 1;
+
+  /* Hides top half once visible */
+  clip-path: inset(50% 0 0 0);
 }
 
 .project-card:hover .card-image {
-  bottom: 0;               /* slide all the way up */
-}
-
-.card-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;             /* hides top half */
-  background-color: white;
-  z-index: 2;              /* sits above image but below text */
-  pointer-events: none;
+  bottom: 0;
 }
 
 /* ---- individual images ---- */
