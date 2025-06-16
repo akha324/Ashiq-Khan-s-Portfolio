@@ -371,14 +371,13 @@ header {
   background-color: white;
   text-align: center;
   box-sizing: border-box;
-  /* REMOVE this line: height: 100%; */
+  /* Don't use height: 100% here */
 }
 
-/* The image covers the entire card */
 .card-image {
   position: absolute;
-  bottom: -100%; /* hide it entirely below */
   left: 0;
+  bottom: -100%;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -387,7 +386,6 @@ header {
   transition: bottom 0.4s ease;
 }
 
-/* On hover, slide the image to fill the card */
 .project-card:hover .card-image {
   bottom: 0;
 }
