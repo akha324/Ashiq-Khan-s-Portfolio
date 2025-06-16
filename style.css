@@ -349,7 +349,6 @@ header {
   display: flex;
 }
 
-/* ─── PROJECT CARD ─────────────────────────────────────────── */
 .project-card {
   position: relative;
   width: 100%;
@@ -357,46 +356,44 @@ header {
   height: 350px;
   border-radius: 12px;
   background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,.06);
-  overflow: hidden;             /* hide anything outside card */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
   text-decoration: none;
   color: #0b1c4d;
+  display: block;
 }
 
-/* Text block */
+/* Text content */
 .card-content {
   position: relative;
+  z-index: 2;
   padding: 20px;
   text-align: center;
-  box-sizing: border-box;
-  transition: opacity .35s ease;    /* fades out on hover */
-  z-index: 2;                       /* keep text above image until hover */
+  background-color: white;
+  transition: opacity 0.3s ease;
 }
 
-/* Hidden image */
+/* Hidden image at bottom */
 .card-image {
   position: absolute;
+  bottom: -100%;         /* completely hidden */
   left: 0;
-  bottom: -100%;   /* start completely below card */
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: bottom .35s ease;
+  transition: bottom 0.4s ease;
   z-index: 1;
 }
 
-/* ─── HOVER STATE ──────────────────────────────────────────── */
+/* On hover: image slides up, text fades out */
 .project-card:hover .card-image {
-  bottom: 0;       /* slide up and cover entire card */
+  bottom: 0;
 }
 
 .project-card:hover .card-content {
-  opacity: 0;      /* optional: hide text when image shows */
+  opacity: 0;
 }
-
-.project-card:hover .card-image {
-  bottom: 0; /* fully slide image up */
 
 /* White mask that hides top 50% of image */
 .project-card .mask {
