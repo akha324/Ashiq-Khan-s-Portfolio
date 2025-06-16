@@ -311,80 +311,66 @@
   <h2 class="portfolio-heading" style="color: navy;">My Projects</h2>
 
   <div class="portfolio-container">
+    <!-- ◀ Left Arrow -->
     <button class="portfolio-nav left" onclick="slideProjects(-1)">&#10094;</button>
 
     <div class="portfolio-slider">
       <!-- ────── Slide 1 ────── -->
       <div class="portfolio-slide active">
+        <a href="connect4.cpp" class="project-card" download>
+          <div class="card-content">
+            <h3>Connect 4</h3>
+            <p>Challenge a friend or the computer in a classic game of Connect 4!</p>
+          </div>
+          <div class="image-wrapper"><div class="card-image connect4"></div></div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-content" style="color: navy;">
-            <h3 style="color: navy;">Connect 4</h3>
-            <p style="color: navy;">Challenge a friend or the computer in a classic game of Connect 4!</p>
+        <a href="race_score.html" class="project-card" download>
+          <div class="card-content">
+            <h3>Score the Race</h3>
+            <p>Calculate race scores and determine the winner fairly.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-image connect4"></div>
-          </div>
-        </div>
+          <div class="image-wrapper"><div class="card-image race"></div></div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-content" style="color: navy;">
-            <h3 style="color: navy;">Score the Race</h3>
-            <p style="color: navy;">Calculate race scores and determine the winner fairly.</p>
+        <a href="eight_queens.html" class="project-card" download>
+          <div class="card-content">
+            <h3>The 8 Queens</h3>
+            <p>Brute-force solution to the classic chess puzzle.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-image race"></div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="card-content" style="color: navy;">
-            <h3 style="color: navy;">The 8 Queens</h3>
-            <p style="color: navy;">Brute-force solution to the classic chess puzzle.</p>
-          </div>
-          <div class="image-wrapper">
-            <div class="card-image queens"></div>
-          </div>
-        </div>
+          <div class="image-wrapper"><div class="card-image queens"></div></div>
+        </a>
       </div>
 
       <!-- ────── Slide 2 ────── -->
       <div class="portfolio-slide">
+        <a href="thousand_game.html" class="project-card" download>
+          <div class="card-content">
+            <h3>The Thousand Game</h3>
+            <p>Play a numbers challenge to reach one thousand!</p>
+          </div>
+          <div class="image-wrapper"><div class="card-image thousand"></div></div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-content" style="color: navy;">
-            <h3 style="color: navy;">The Thousand Game</h3>
-            <p style="color: navy;">Play a numbers challenge to reach one thousand!</p>
+        <a href="count_es.html" class="project-card" download>
+          <div class="card-content">
+            <h3>Count the E’s</h3>
+            <p>Spot every “E” in a tricky text puzzle.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-image thousand"></div>
-          </div>
-        </div>
+          <div class="image-wrapper"><div class="card-image count-e"></div></div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-content" style="color: navy;">
-            <h3 style="color: navy;">Count the E’s</h3>
-            <p style="color: navy;">Spot every “E” in a tricky text puzzle.</p>
+        <a href="sort_clocks.html" class="project-card" download>
+          <div class="card-content">
+            <h3>Sort the Clocks</h3>
+            <p>Arrange clock faces in sorted order visually.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-image count-e"></div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="card-content" style="color: navy;">
-            <h3 style="color: navy;">Sort the Clocks</h3>
-            <p style="color: navy;">Arrange clock faces in sorted order visually.</p>
-          </div>
-          <div class="image-wrapper">
-            <div class="card-image clocks"></div>
-          </div>
-        </div>
+          <div class="image-wrapper"><div class="card-image clocks"></div></div>
+        </a>
       </div>
     </div>
-  </div>
-</section>
 
+    <!-- ▶ Right Arrow -->
     <button class="portfolio-nav right" onclick="slideProjects(1)">&#10095;</button>
   </div>
 </section>
@@ -395,24 +381,87 @@
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      slide.style.display = 'none';
+      slide.style.display = i === index ? 'flex' : 'none';
+      slide.classList.toggle('active', i === index);
     });
-    slides[index].classList.add('active');
-    slides[index].style.display = 'flex'; // or 'block' based on layout
   }
 
   function slideProjects(direction) {
-    currentSlide += direction;
-    if (currentSlide < 0) currentSlide = slides.length - 1;
-    else if (currentSlide >= slides.length) currentSlide = 0;
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
     showSlide(currentSlide);
   }
 
   // Initialize
   slides.forEach(slide => slide.style.display = 'none');
   showSlide(currentSlide);
-</script>  
+</script>
+
+<style>
+  .portfolio-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .portfolio-slider {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .portfolio-slide {
+    width: 100%;
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 30%;
+    min-width: 250px;
+    text-decoration: none;
+    color: navy;
+    border: 2px solid navy;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+
+  .portfolio-nav {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: navy;
+  }
+
+  .card-content h3,
+  .card-content p {
+    margin: 0.5rem 0;
+    color: navy;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+  }
+
+  .connect4    { background-image: url('connect4.jpg'); }
+  .race        { background-image: url('race.jpg'); }
+  .queens      { background-image: url('queens.jpg'); }
+  .thousand    { background-image: url('thousand.jpg'); }
+  .count-e     { background-image: url('count-e.jpg'); }
+  .clocks      { background-image: url('clocks.jpg'); }
+</style>
 
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
