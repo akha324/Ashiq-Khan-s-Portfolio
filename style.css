@@ -373,57 +373,57 @@ header {
   transition: opacity 0.3s ease;
 }
 
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  cursor: default;
-  color: #0b1c4d;
+/* ——— PROJECT CARD ——— */
+.project-card{
+  position:relative;
+  width:100%;
+  max-width:300px;
+  height:350px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;  /* keep text vertically centred */
+  text-align:center;
+  cursor:default;
 }
 
-.card-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  background-color: white;
-  box-sizing: border-box;
-  transition: opacity 0.4s ease;
+/* text is always on top */
+.card-content{
+  position:relative;
+  z-index:2;               /* stays above the image */
+  padding:20px;
+  box-sizing:border-box;
+  color:#0b1c4d;
 }
 
-/* image starts hidden (off-screen) */
-.card-image {
-  position: absolute;
-  top: 100%; /* start fully off-screen */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: top 0.4s ease;
-  z-index: 1;
+/* full-size image starts fully below the card */
+.card-image{
+  position:absolute;
+  left:0;
+  bottom:-100%;            /* hidden */
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  transition:bottom .4s ease;   /* smooth upward slide */
+  z-index:1;               /* behind the text */
 }
 
-/* only slide up to show bottom half */
-.project-card:hover .card-image {
-  top: 50%;
+/* hover: slide image up so it fills the card */
+.project-card:hover .card-image{
+  bottom:0;
 }
 
-/* ---- images ---- */
-.card-image.connect4  { background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api'); }
-.card-image.race      { background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api'); }
-.card-image.queens    { background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png'); }
-.card-image.thousand  { background-image: url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg'); }
-.card-image.count-e   { background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api'); }
-.card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
+/*  — individual images —  */
+.card-image.connect4 {background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');}
+.card-image.race    {background-image:url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');}
+.card-image.queens  {background-image:url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');}
+.card-image.thousand{background-image:url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg');}
+.card-image.count-e {background-image:url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api');}
+.card-image.clocks  {background-image:url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api');}
 
 .project-card.empty {
   background: #344e86;
