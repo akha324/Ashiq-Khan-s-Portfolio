@@ -371,7 +371,7 @@ header {
   background-color: white;
   text-align: center;
   box-sizing: border-box;
-  height: 100%;
+  /* REMOVE this line: height: 100%; */
 }
 
 /* The image covers the entire card */
