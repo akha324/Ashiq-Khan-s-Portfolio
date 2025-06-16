@@ -354,52 +354,41 @@ header {
   width: 100%;
   max-width: 300px;
   height: 350px;
-  overflow: hidden;
+  overflow: hidden; /* hides anything outside the box */
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   text-decoration: none;
   color: #0b1c4d;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card-content {
   position: relative;
   z-index: 2;
   padding: 20px;
-  height: 100%;
   background-color: white;
   text-align: center;
   box-sizing: border-box;
+  flex: 1;
 }
 
 .card-image {
   position: absolute;
-  top: 100%;
+  bottom: -50%;         /* Start hidden below card */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  transition: bottom 0.4s ease;
   z-index: 1;
-  transition: top 0.4s ease;
 }
 
 .project-card:hover .card-image {
-  top: 0;
-}
-
-/* This white mask hides the lower 50% of the image */
-.image-mask {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: white;
-  z-index: 3;
-  pointer-events: none;
+  bottom: 0;            /* Slide image up fully */
 }
 
 /* Individual project images */
