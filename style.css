@@ -306,6 +306,9 @@ header {
   }
 }
 
+/* ============================================================= */
+/*  PORTFOLIO SECTION                                            */
+/* ============================================================= */
 .portfolio-section {
   background-color: #0b1c4d;
   color: white;
@@ -342,7 +345,6 @@ header {
   gap: 30px;
   animation: fadeIn 0.3s ease-in-out;
 }
-
 .portfolio-slide.active {
   display: flex;
 }
@@ -357,64 +359,68 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #0b1c4d;
 }
 
-/* text always visible, sitting above image */
 .card-content {
   position: relative;
   z-index: 2;
-  background-color: white;
   padding: 20px;
-  width: 100%;
-  box-sizing: border-box;
+  background-color: white; /* ensures text is always visible */
   pointer-events: none;
 }
 
-/* image hidden below, slides up on hover */
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0b1c4d;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  pointer-events: none;
+}
+
 .card-image {
   position: absolute;
-  top: 100%; /* start fully hidden */
+  top: 100%; /* hidden by default */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: top 0.4s ease;
+  transition: top 0.5s ease;
   z-index: 1;
 }
 
 .project-card:hover .card-image {
-  top: 0; /* slides fully up */
+  top: 0; /* slides fully up on hover */
 }
-
-/* Sample background images */
-.card-image.connect4 {
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');
-}
-.card-image.race {
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');
-}
-.card-image.queens {
-  background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');
-}
-
 
 /* Background images */
-.card-image.connect4 {
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');
-}
-
-.card-image.race {
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');
-}
-
-.card-image.queens {
-  background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');
-}
+.card-image.connect4  { background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api'); }
+.card-image.race      { background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api'); }
+.card-image.queens    { background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png'); }
+.card-image.thousand  { background-image: url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg'); }
+.card-image.count-e   { background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api'); }
+.card-image.clocks    { background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api'); }
 
 .portfolio-nav {
   background: none;
