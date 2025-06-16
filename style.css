@@ -357,32 +357,37 @@ header {
   height: 350px;
   border-radius: 12px;
   background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: #0b1c4d;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 .card-content {
+  position: relative;
   z-index: 2;
   padding: 20px;
+  background-color: white;
   text-align: center;
-  background: white;
-  flex: 1;
   box-sizing: border-box;
+  height: 100%;
 }
 
+/* The image covers the entire card */
 .card-image {
   position: absolute;
-  bottom: -100%;
+  bottom: -100%; /* hide it entirely below */
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
+  z-index: 1;
   transition: bottom 0.4s ease;
 }
 
+/* On hover, slide the image to fill the card */
 .project-card:hover .card-image {
   bottom: 0;
 }
