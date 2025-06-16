@@ -361,24 +361,22 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  cursor: default;
   text-align: center;
+  cursor: default;
 }
 
-/* Card Text */
 .card-content {
   position: relative;
   z-index: 2;
   padding: 20px;
   background-color: white;
-  box-sizing: border-box;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
-/* Image hidden below */
+/* image starts completely hidden */
 .card-image {
   position: absolute;
-  top: 100%; /* start completely below card */
+  top: 100%;  /* start fully below card */
   left: 0;
   width: 100%;
   height: 100%;
@@ -386,15 +384,26 @@ header {
   background-position: center;
   transition: top 0.4s ease;
   z-index: 1;
-  clip-path: inset(50% 0 0 0); /* Only show bottom half */
 }
 
-/* On hover: slide image up to show bottom half */
+/* mask to show only bottom half of the image */
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 50%;
+  width: 100%;
+  background: white;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* on hover: slide image up */
 .project-card:hover .card-image {
   top: 0;
 }
 
-/* Fade out text */
+/* optionally hide the text */
 .project-card:hover .card-content {
   opacity: 0;
 }
