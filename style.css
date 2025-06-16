@@ -364,27 +364,27 @@ header {
   overflow: hidden;
 }
 
-/* Text content */
+/* Content (title + description) */
 .card-content {
   z-index: 2;
   padding: 20px;
-  text-align: center;
   background-color: white;
+  text-align: center;
   flex: 1;
   box-sizing: border-box;
 }
 
-/* 👇 This wrapper clips the image to top half */
+/* Wrapper to clip top half only */
 .image-container {
   position: relative;
   height: 50%;
   overflow: hidden;
 }
 
-/* 👇 Full image starts hidden below, and slides in */
+/* Full image slides up from below */
 .card-image {
   position: absolute;
-  top: 100%; /* start hidden below */
+  top: 100%; /* start completely hidden */
   left: 0;
   width: 100%;
   height: 100%;
@@ -393,7 +393,7 @@ header {
   transition: top 0.4s ease;
 }
 
-/* 👇 On hover, image slides up and top half becomes visible */
+/* Slide full image into the container (only top half visible) */
 .project-card:hover .card-image {
   top: 0;
 }
