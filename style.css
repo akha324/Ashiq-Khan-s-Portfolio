@@ -107,7 +107,7 @@ header {
 .about-heading {
   font-size: 36px;
   margin: 0 0 50px;
-  color: white;
+  color: white; /* Makes "My Projects" or section title white */
   font-weight: bold;
   text-align: center;
 }
@@ -204,6 +204,7 @@ header {
   cursor: pointer;
   pointer-events: auto;
   transition: transform 0.18s ease;
+  z-index: 20; /* Ensures visibility */
 }
 
 .about-arrow:hover {
