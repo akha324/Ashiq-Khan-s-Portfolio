@@ -121,6 +121,26 @@
       </nav>
     </div>
   </header>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove("active"));
+          if (navLink) navLink.classList.add("active");
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+  });
+</script>
 
   <!-- ✅ Hero Section -->
   <section class="hero" id="home">
