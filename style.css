@@ -350,62 +350,48 @@ header {
 }
 
 /* --- PROJECT CARD --- */
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  color: #0b1c4d;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  cursor: default;
+.project-card{
+  position:relative;
+  width:100%;
+  max-width:300px;
+  height:350px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  cursor:default;                 /* looks like a button, not a link */
 }
 
-.card-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-  box-sizing: border-box;
-  transition: opacity 0.4s ease;
+/* text block */
+.card-content{
+  position:relative;
+  z-index:2;                      /* stays above the image */
+  padding:20px;
+  text-align:center;
+  box-sizing:border-box;
+  transition:opacity .35s ease;   /* fades away on hover */
+  pointer-events:none;            /* text is NOT clickable */
 }
 
-/* Hidden image that slides up on hover */
-.card-image {
-  position: absolute;
-  bottom: -100%; /* Hidden by default */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: bottom 0.4s ease;
-  z-index: 1;
+/* hidden full-size image */
+.card-image{
+  position:absolute;
+  left:0;
+  bottom:-100%;                   /* start completely below the card */
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  transition:bottom .35s ease;    /* slide upward on hover */
+  z-index:1;
 }
 
-/* Hover behavior */
-.project-card:hover .card-image {
-  bottom: 0;
-}
-
-.project-card:hover .card-content {
-  opacity: 0;
-}
-
-/* hover: slide image upward until it fills the card */
-.project-card:hover .card-image {
-  bottom: 0;
-}
-
-.project-card:hover .card-content {
-  opacity: 0;
-}
+/* hover state */
+.project-card:hover .card-image{ bottom:0; }   /* image covers card */
+.project-card:hover .card-content{ opacity:0;} /* text fades out   */
 
 /* White mask that hides top 50% of image */
 .project-card .mask {
