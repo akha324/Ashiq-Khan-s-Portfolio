@@ -229,11 +229,34 @@ header {
 }
 
 /* SERVICE SECTION */
-/* Individual Service Card */
+.services-section {
+  background-color: #ffffff;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 36px;
+  color: #0a1a44;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* 🔧 Grid layout with fixed column sizing */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 40px 30px; /* vertical and horizontal spacing */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 🧱 Fixed-size cards */
 .service-card {
   background-color: #f9f9f9;
-  width: 300px;
-  height: 300px;
+  width: 100%;               /* fills its grid cell */
+  height: 300px;             /* fixed height */
   padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -270,16 +293,16 @@ header {
   margin: 0;
 }
 
-/* Optional: Responsive Adjustments */
+/* 📱 Responsive tweaks */
 @media (max-width: 992px) {
-  .service-card {
-    width: 45%;
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .service-card {
-    width: 100%;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
 
