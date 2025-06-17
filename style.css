@@ -316,7 +316,6 @@ header {
 <button style="color: white; font-size: 2.5em;">‹</button>
 <button style="color: white; font-size: 2.5em;">›</button>
 
-/* 🔵 Make background navy and all internal text white by default */
 .portfolio-section {
   background-color: #0b1c4d;
   color: white;
@@ -324,85 +323,88 @@ header {
   text-align: center;
 }
 
-/* 🔠 Heading */
+/* ---- Title ---- */
 .portfolio-heading {
   font-size: 3rem;
   margin: 0 0 60px;
   font-weight: bold;
-  color: white;
+  color: #ffffff !important; /* Force white */
 }
 
-/* ⬅️➡️ Arrows */
-.portfolio-nav {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: white;
-}
-
-/* 💠 Layout */
 .portfolio-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .portfolio-slider {
   display: flex;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 .portfolio-slide {
-  width: 100%;
   display: none;
+  flex: 0 0 100%;
   justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.portfolio-slide.active {
+  display: flex;
 }
 
-/* 🧩 Project Card */
 .project-card {
-  width: 30%;
-  min-width: 250px;
-  text-decoration: none;
-  background: white;
-  color: #0b1c4d;
-  border: 2px solid #0b1c4d;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-/* 📝 Text inside cards */
-.card-content h3,
-.card-content p {
-  margin: 0.5rem 0;
-  color: #0b1c4d;
-}
-
-/* 🖼️ Image inside card */
-.card-image {
+  position: relative;
   width: 100%;
-  height: 150px;
+  max-width: 300px;
+  height: 350px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0b1c4d;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.card-image {
+  position: absolute;
+  top: 100%; /* Completely hidden */
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  transition: top 0.5s ease;
+  z-index: 1;
 }
 
-/* 🎯 Background images (if local, make sure they exist!) */
-.connect4    { background-image: url('connect4.jpg'); }
-.race        { background-image: url('race.jpg'); }
-.queens      { background-image: url('queens.jpg'); }
-.thousand    { background-image: url('thousand.jpg'); }
-.count-e     { background-image: url('count-e.jpg'); }
-.clocks      { background-image: url('clocks.jpg'); }
+.project-card:hover .card-image {
+  top: 0; /* Slide into view fully */
+}
+
+/*  — individual images —  */
+.card-image.connect4 {background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');}
+.card-image.race    {background-image:url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');}
+.card-image.queens  {background-image:url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');}
+.card-image.thousand{background-image:url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg');}
+.card-image.count-e {background-image:url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api');}
+.card-image.clocks  {background-image:url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api');}
 
 .project-card.empty {
   background: #344e86;
