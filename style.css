@@ -385,18 +385,24 @@ header {
 }
 
 .card-content {
-  flex: 0 0 50%;           /* Lock top half */
-  padding: 20px;
+  height: 50%;               /* top half */
+  padding: 10px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* align to top */
+  align-items: flex-start;     /* optional: align text left */
   box-sizing: border-box;
-  height: 50%;             /* Explicit height */
+}
+
+.card-content h3,
+.card-content p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .card-image {
-  flex: 0 0 50%;           /* Lock bottom half */
-  height: 50%;
+  height: 50%;               /* bottom half */
   background-size: cover;
   background-position: center;
   border-radius: 0 0 12px 12px;
