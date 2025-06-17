@@ -418,11 +418,15 @@ header {
 
 /* Background image inside wrapper */
 .card-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 200%; /* make it double height to allow sliding */
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   transition: transform 0.5s ease;
+  z-index: 1;
 }
 
 /* Slide the image up */
