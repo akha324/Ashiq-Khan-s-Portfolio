@@ -312,94 +312,97 @@ header {
 /* ============================================================= */
 /*  PORTFOLIO SECTION                                            */
 /* ============================================================= */
-<h2 style="color: white;">My Projects</h2>
-<button style="color: white; font-size: 2.5em;">‹</button>
-<button style="color: white; font-size: 2.5em;">›</button>
-
 /* ===== PORTFOLIO SECTION ===== */
-.portfolio-section{
-  background:#0b1c4d;            /* deep navy */
-  color:#ffffff;
-  padding:100px 20px 120px;
-  text-align:center;
+.portfolio-section {
+  background: #0b1c4d;            /* deep navy */
+  color: #ffffff;
+  padding: 100px 20px 120px;
+  text-align: center;
 }
 
-.portfolio-heading{
-  font-size:3rem;
-  margin:0 0 60px;
-  font-weight:bold;
-  color:#ffffff;                 /* heading stays white */
+.portfolio-heading {
+  font-size: 3rem;
+  margin: 0 0 60px;
+  font-weight: bold;
+  color: #ffffff;                 /* heading stays white */
 }
 
-/* layout */
-.portfolio-container{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  max-width:1200px;
-  margin:0 auto;
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.portfolio-nav{
-  background:none;
-  border:none;
-  font-size:2.5em;
-  color:#ffffff;                 /* arrows white */
-  cursor:pointer;
-  user-select:none;
-  z-index:2;                     /* sit on top of cards */
+.portfolio-nav {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: #ffffff;                 /* arrows white */
+  cursor: pointer;
+  user-select: none;
+  z-index: 2;
 }
 
-.portfolio-slider{
-  display:flex;
-  width:100%;
-  overflow:hidden;
+.portfolio-slider {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
 }
 
-.portfolio-slide{
-  flex:0 0 100%;
-  display:none;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  gap:30px;
-}
-.portfolio-slide.active{display:flex;}
-
-/* card */
-.project-card{
-  position:relative;
-  width:100%;
-  max-width:300px;
-  height:350px;
-  background:#ffffff;
-  border:2px solid #0b1c4d;
-  border-radius:12px;
-  text-decoration:none;
-  color:#0b1c4d;
-  display:flex;
-  flex-direction:column;
-  transition:transform .3s ease;
-}
-.project-card:hover{transform:translateY(-4px);}
-
-.card-content{padding:25px 20px;}
-
-.card-image{
-  width:100%;
-  height:170px;
-  background-size:cover;
-  background-position:center;
-  border-radius:0 0 12px 12px;   /* only bottom corners rounded */
+.portfolio-slide {
+  flex: 0 0 100%;
+  display: none;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-/* example images (use real paths or external URLs) */
-.connect4 {background-image:url('connect4.jpg');}
-.race     {background-image:url('race.jpg');}
-.queens   {background-image:url('queens.jpg');}
-.thousand {background-image:url('thousand.jpg');}
-.count-e  {background-image:url('count-e.jpg');}
-.clocks   {background-image:url('clocks.jpg');}
+.portfolio-slide.active {
+  display: flex;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  background: #ffffff;
+  border: 2px solid #0b1c4d;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #0b1c4d;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-content {
+  padding: 25px 20px;
+}
+
+.card-image {
+  width: 100%;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ===== BACKGROUND IMAGES ===== */
+.connect4  { background-image: url('connect4.jpg'); }
+.race      { background-image: url('race.jpg'); }
+.queens    { background-image: url('queens.jpg'); }
+.thousand  { background-image: url('thousand.jpg'); }
+.count-e   { background-image: url('count-e.jpg'); }
+.clocks    { background-image: url('clocks.jpg'); }
 
 /* -----------------------------------------------------
    GLOBAL TOKENS (define only once)
