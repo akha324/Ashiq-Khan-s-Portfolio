@@ -319,10 +319,12 @@ header {
   text-align: center;
 }
 
+/* ---- Title ---- */
 .portfolio-heading {
   font-size: 3rem;
   margin: 0 0 60px;
   font-weight: bold;
+  color: #ffffff;          /* ← force white */
 }
 
 .portfolio-container {
@@ -414,7 +416,7 @@ header {
   background: none;
   border: none;
   font-size: 2.5em;
-  color: white;
+  color: #ffffff;          /* ← ensure white */
   cursor: pointer;
   padding: 10px;
   margin-top: 40px;
