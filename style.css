@@ -316,122 +316,90 @@ header {
 <button style="color: white; font-size: 2.5em;">‹</button>
 <button style="color: white; font-size: 2.5em;">›</button>
 
-.portfolio-section {
-  background-color: #0b1c4d;
-  color: white;
-  padding: 100px 20px 120px;
-  text-align: center;
+/* ===== PORTFOLIO SECTION ===== */
+.portfolio-section{
+  background:#0b1c4d;            /* deep navy */
+  color:#ffffff;
+  padding:100px 20px 120px;
+  text-align:center;
 }
 
-/* ---- Title ---- */
-.portfolio-heading {
-  font-size: 3rem;
-  margin: 0 0 60px;
-  font-weight: bold;
-  color: #ffffff !important; /* Force white */
+.portfolio-heading{
+  font-size:3rem;
+  margin:0 0 60px;
+  font-weight:bold;
+  color:#ffffff;                 /* heading stays white */
 }
 
-.portfolio-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* layout */
+.portfolio-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  max-width:1200px;
+  margin:0 auto;
 }
 
-.portfolio-slider {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
+.portfolio-nav{
+  background:none;
+  border:none;
+  font-size:2.5em;
+  color:#ffffff;                 /* arrows white */
+  cursor:pointer;
+  user-select:none;
+  z-index:2;                     /* sit on top of cards */
 }
 
-.portfolio-slide {
-  display: none;
-  flex: 0 0 100%;
-  justify-content: space-around;
-  gap: 30px;
-  animation: fadeIn 0.3s ease-in-out;
-}
-.portfolio-slide.active {
-  display: flex;
+.portfolio-slider{
+  display:flex;
+  width:100%;
+  overflow:hidden;
 }
 
-.project-card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #0b1c4d;
+.portfolio-slide{
+  flex:0 0 100%;
+  display:none;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:30px;
+}
+.portfolio-slide.active{display:flex;}
+
+/* card */
+.project-card{
+  position:relative;
+  width:100%;
+  max-width:300px;
+  height:350px;
+  background:#ffffff;
+  border:2px solid #0b1c4d;
+  border-radius:12px;
+  text-decoration:none;
+  color:#0b1c4d;
+  display:flex;
+  flex-direction:column;
+  transition:transform .3s ease;
+}
+.project-card:hover{transform:translateY(-4px);}
+
+.card-content{padding:25px 20px;}
+
+.card-image{
+  width:100%;
+  height:170px;
+  background-size:cover;
+  background-position:center;
+  border-radius:0 0 12px 12px;   /* only bottom corners rounded */
 }
 
-.card-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  pointer-events: none;
-}
-
-.card-image {
-  position: absolute;
-  top: 100%; /* Completely hidden */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: top 0.5s ease;
-  z-index: 1;
-}
-
-.project-card:hover .card-image {
-  top: 0; /* Slide into view fully */
-}
-
-/*  — individual images —  */
-.card-image.connect4 {background-image:url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');}
-.card-image.race    {background-image:url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');}
-.card-image.queens  {background-image:url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');}
-.card-image.thousand{background-image:url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg');}
-.card-image.count-e {background-image:url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api');}
-.card-image.clocks  {background-image:url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api');}
-
-.project-card.empty {
-  background: #344e86;
-  color: #d0d0d0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2em;
-}
-
-/* === Arrows === */
-.portfolio-nav {
-  background: none;
-  border: none;
-  font-size: 2.5em;
-  color: #ffffff !important; /* Force white */
-  cursor: pointer;
-  padding: 10px;
-  margin-top: 40px;
-  user-select: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+/* example images (use real paths or external URLs) */
+.connect4 {background-image:url('connect4.jpg');}
+.race     {background-image:url('race.jpg');}
+.queens   {background-image:url('queens.jpg');}
+.thousand {background-image:url('thousand.jpg');}
+.count-e  {background-image:url('count-e.jpg');}
+.clocks   {background-image:url('clocks.jpg');}
 
 /* -----------------------------------------------------
    GLOBAL TOKENS (define only once)
