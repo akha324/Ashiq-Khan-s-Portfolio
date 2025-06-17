@@ -312,9 +312,9 @@ header {
 /* ============================================================= */
 /*  PORTFOLIO SECTION                                            */
 /* ============================================================= */
-/* ===== PORTFOLIO SECTION ===== */
+
 .portfolio-section {
-  background: #0b1c4d;            /* deep navy */
+  background: #0b1c4d;
   color: #ffffff;
   padding: 100px 20px 120px;
   text-align: center;
@@ -324,7 +324,7 @@ header {
   font-size: 3rem;
   margin: 0 0 60px;
   font-weight: bold;
-  color: #ffffff;                 /* heading stays white */
+  color: #ffffff;
 }
 
 .portfolio-container {
@@ -340,7 +340,7 @@ header {
   background: none;
   border: none;
   font-size: 2.5em;
-  color: #ffffff;                 /* arrows white */
+  color: #ffffff;
   cursor: pointer;
   user-select: none;
   z-index: 2;
@@ -364,7 +364,7 @@ header {
   display: flex;
 }
 
-// Project Section
+/* ===== PROJECT CARD ===== */
 .project-card {
   width: 100%;
   max-width: 300px;
