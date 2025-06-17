@@ -317,68 +317,56 @@
     <div class="portfolio-slider">
       <!-- ────── Slide 1 ────── -->
       <div class="portfolio-slide active">
-        <div class="project-card">
-          <div class="card-top">
+        <a href="connect4.cpp" class="project-card" download>
+          <div class="card-image connect4"></div>
+          <div class="card-content">
             <h3>Connect 4</h3>
             <p>Challenge a friend or the computer in a classic game of Connect 4!</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-bottom connect4"></div>
-          </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-top">
+        <a href="scoreTheRace.cpp" class="project-card" download>
+          <div class="card-image race"></div>
+          <div class="card-content">
             <h3>Score the Race</h3>
             <p>Calculate race scores and determine the winner fairly.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-bottom race"></div>
-          </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-top">
+        <a href="eightQueens.cpp" class="project-card" download>
+          <div class="card-image queens"></div>
+          <div class="card-content">
             <h3>The 8 Queens</h3>
             <p>Brute-force solution to the classic chess puzzle.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-bottom queens"></div>
-          </div>
-        </div>
+        </a>
       </div>
 
       <!-- ────── Slide 2 ────── -->
       <div class="portfolio-slide">
-        <div class="project-card">
-          <div class="card-top">
+        <a href="thousandGames.java" class="project-card" download>
+          <div class="card-image thousand"></div>
+          <div class="card-content">
             <h3>The Thousand Game</h3>
             <p>Play a numbers challenge to reach one thousand!</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-bottom thousand"></div>
-          </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-top">
+        <a href="countE.java" class="project-card" download>
+          <div class="card-image count-e"></div>
+          <div class="card-content">
             <h3>Count the E’s</h3>
             <p>Spot every “E” in a tricky text puzzle.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-bottom count-e"></div>
-          </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <div class="card-top">
+        <a href="Project2.java" class="project-card" download>
+          <div class="card-image clocks"></div>
+          <div class="card-content">
             <h3>Sort the Clocks</h3>
             <p>Arrange clock faces in sorted order visually.</p>
           </div>
-          <div class="image-wrapper">
-            <div class="card-bottom clocks"></div>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -389,7 +377,7 @@
 
 <style>
   .portfolio-section {
-    background-color: #0b1c4d;
+    background-color: #0b1c4d; /* Navy blue */
     color: white;
     padding: 100px 20px 120px;
     text-align: center;
@@ -446,65 +434,42 @@
     background: white;
     border: 2px solid #0b1c4d;
     border-radius: 12px;
+    text-decoration: none;
     color: #0b1c4d;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease;
   }
 
   .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
   }
 
-  .card-top {
-    padding: 16px;
+  .card-content {
+    height: 100%;                   /* ⬅ Controls vertical space the text uses */
+    padding: 12px 16px;             /* ⬅ Controls spacing inside the text box */
     box-sizing: border-box;
-    text-align: center;
-    z-index: 2;
-    position: relative;
-    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    /* ⬅ Aligns the text to the top */
+    align-items: center;            /* ⬅ Centers the text horizontally */
   }
 
-  .card-top h3 {
-    margin: 0 0 8px;
-    font-size: 1.1rem;
-  }
-
-  .card-top p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .image-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .card-image {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .card-bottom {
-    width: 100%;
-    height: 100%;
+    height: 170px;
     background-size: cover;
     background-position: center;
-    transition: transform 0.5s ease;
+    border-radius: 0 0 12px 12px;
   }
 
-  .project-card:hover .card-bottom {
-    transform: translateY(-100%);
-  }
-
-  /* Image Classes */
-  .connect4  { background-image: url('assets/connect4.jpg'); }
-  .race      { background-image: url('assets/race.jpg'); }
-  .queens    { background-image: url('assets/queens.jpg'); }
-  .thousand  { background-image: url('assets/thousand.jpg'); }
-  .count-e   { background-image: url('assets/count-e.jpg'); }
-  .clocks    { background-image: url('assets/clocks.jpg'); }
+  /* Image classes (use your own URLs or relative paths) */
+  .connect4  { background-image: url('connect4.jpg'); }
+  .race      { background-image: url('race.jpg'); }
+  .queens    { background-image: url('queens.jpg'); }
+  .thousand  { background-image: url('thousand.jpg'); }
+  .count-e   { background-image: url('count-e.jpg'); }
+  .clocks    { background-image: url('clocks.jpg'); }
 </style>
 
 <script>
@@ -524,11 +489,10 @@
   }
 
   // Initialize
-  document.addEventListener("DOMContentLoaded", () => {
-    slides.forEach(slide => slide.style.display = 'none');
-    showSlide(currentSlide);
-  });
+  slides.forEach(slide => slide.style.display = 'none');
+  showSlide(currentSlide);
 </script>
+
 
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
@@ -586,4 +550,4 @@
 />
 
   </body>
-</html>         
+</html>                
