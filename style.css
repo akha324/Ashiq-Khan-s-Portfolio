@@ -366,17 +366,17 @@ header {
 
 /* ===== PROJECT CARD ===== */
 .project-card {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 300px;
   height: 350px;
-  background: #ffffff;
+  display: flex;
+  flex-direction: column;
   border: 2px solid #0b1c4d;
   border-radius: 12px;
-  text-decoration: none;
-  color: #0b1c4d;
   overflow: hidden;
+  background: white;
+  color: #0b1c4d;
+  text-decoration: none;
   transition: transform 0.3s ease;
 }
 
@@ -385,30 +385,37 @@ header {
 }
 
 .card-content {
-  height: 50%;               /* top half */
-  padding: 10px 16px;
+  flex: 0 0 50%; /* Top half only */
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* align to top */
-  align-items: flex-start;     /* optional: align text left */
+  justify-content: flex-start; /* push text to top */
+  align-items: center;
+  text-align: center;
   box-sizing: border-box;
 }
 
-.card-content h3,
+.card-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
 .card-content p {
-  margin: 4px 0;
-  font-size: 0.95rem;
+  margin: 0;
+  font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .card-image {
-  height: 50%;               /* bottom half */
+  flex: 1;
+  height: 50%; /* Bottom half */
   background-size: cover;
   background-position: center;
   border-radius: 0 0 12px 12px;
 }
 
-/* ===== BACKGROUND IMAGES ===== */
+/* Image backgrounds */
 .connect4  { background-image: url('connect4.jpg'); }
 .race      { background-image: url('race.jpg'); }
 .queens    { background-image: url('queens.jpg'); }
