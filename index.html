@@ -308,7 +308,7 @@
 </section>
 
 <section id="portfolio" class="portfolio-section">
-  <h2 class="portfolio-heading" style="color: navy;">My Projects</h2>
+  <h2 class="portfolio-heading">My Projects</h2>
 
   <div class="portfolio-container">
     <!-- ◀ Left Arrow -->
@@ -318,54 +318,54 @@
       <!-- ────── Slide 1 ────── -->
       <div class="portfolio-slide active">
         <a href="connect4.cpp" class="project-card" download>
+          <div class="card-image connect4"></div>
           <div class="card-content">
             <h3>Connect 4</h3>
             <p>Challenge a friend or the computer in a classic game of Connect 4!</p>
           </div>
-          <div class="image-wrapper"><div class="card-image connect4"></div></div>
         </a>
 
         <a href="race_score.html" class="project-card" download>
+          <div class="card-image race"></div>
           <div class="card-content">
             <h3>Score the Race</h3>
             <p>Calculate race scores and determine the winner fairly.</p>
           </div>
-          <div class="image-wrapper"><div class="card-image race"></div></div>
         </a>
 
         <a href="eight_queens.html" class="project-card" download>
+          <div class="card-image queens"></div>
           <div class="card-content">
             <h3>The 8 Queens</h3>
             <p>Brute-force solution to the classic chess puzzle.</p>
           </div>
-          <div class="image-wrapper"><div class="card-image queens"></div></div>
         </a>
       </div>
 
       <!-- ────── Slide 2 ────── -->
       <div class="portfolio-slide">
         <a href="thousand_game.html" class="project-card" download>
+          <div class="card-image thousand"></div>
           <div class="card-content">
             <h3>The Thousand Game</h3>
             <p>Play a numbers challenge to reach one thousand!</p>
           </div>
-          <div class="image-wrapper"><div class="card-image thousand"></div></div>
         </a>
 
         <a href="count_es.html" class="project-card" download>
+          <div class="card-image count-e"></div>
           <div class="card-content">
             <h3>Count the E’s</h3>
             <p>Spot every “E” in a tricky text puzzle.</p>
           </div>
-          <div class="image-wrapper"><div class="card-image count-e"></div></div>
         </a>
 
         <a href="sort_clocks.html" class="project-card" download>
+          <div class="card-image clocks"></div>
           <div class="card-content">
             <h3>Sort the Clocks</h3>
             <p>Arrange clock faces in sorted order visually.</p>
           </div>
-          <div class="image-wrapper"><div class="card-image clocks"></div></div>
         </a>
       </div>
     </div>
@@ -374,6 +374,97 @@
     <button class="portfolio-nav right" onclick="slideProjects(1)">&#10095;</button>
   </div>
 </section>
+
+<style>
+  .portfolio-section {
+    background-color: #0b1c4d; /* Navy blue */
+    color: white;
+    padding: 100px 20px 120px;
+    text-align: center;
+  }
+
+  .portfolio-heading {
+    font-size: 3rem;
+    margin: 0 0 60px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .portfolio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .portfolio-nav {
+    background: none;
+    border: none;
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .portfolio-slider {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .portfolio-slide {
+    flex: 0 0 100%;
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .portfolio-slide.active {
+    display: flex;
+  }
+
+  .project-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 350px;
+    background: white;
+    border: 2px solid #0b1c4d;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #0b1c4d;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-content {
+    padding: 25px 20px;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 12px 12px;
+  }
+
+  /* Image classes (use your own URLs or relative paths) */
+  .connect4  { background-image: url('connect4.jpg'); }
+  .race      { background-image: url('race.jpg'); }
+  .queens    { background-image: url('queens.jpg'); }
+  .thousand  { background-image: url('thousand.jpg'); }
+  .count-e   { background-image: url('count-e.jpg'); }
+  .clocks    { background-image: url('clocks.jpg'); }
+</style>
 
 <script>
   let currentSlide = 0;
@@ -396,72 +487,6 @@
   showSlide(currentSlide);
 </script>
 
-<style>
-  .portfolio-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .portfolio-slider {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .portfolio-slide {
-    width: 100%;
-    display: none;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .project-card {
-    width: 30%;
-    min-width: 250px;
-    text-decoration: none;
-    color: navy;
-    border: 2px solid navy;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  .project-card:hover {
-    transform: scale(1.05);
-  }
-
-  .portfolio-nav {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: navy;
-  }
-
-  .card-content h3,
-  .card-content p {
-    margin: 0.5rem 0;
-    color: navy;
-  }
-
-  .card-image {
-    width: 100%;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-  }
-
-  .connect4    { background-image: url('connect4.jpg'); }
-  .race        { background-image: url('race.jpg'); }
-  .queens      { background-image: url('queens.jpg'); }
-  .thousand    { background-image: url('thousand.jpg'); }
-  .count-e     { background-image: url('count-e.jpg'); }
-  .clocks      { background-image: url('clocks.jpg'); }
-</style>
 
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
