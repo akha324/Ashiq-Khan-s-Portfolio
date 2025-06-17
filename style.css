@@ -368,7 +368,6 @@ header {
 .project-card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   width: 100%;
   max-width: 300px;
   height: 350px;
@@ -386,17 +385,18 @@ header {
 }
 
 .card-content {
-  flex: 1;
+  flex: 0 0 50%;           /* Lock top half */
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 50%; /* Take top half */
   box-sizing: border-box;
+  height: 50%;             /* Explicit height */
 }
 
 .card-image {
-  height: 50%; /* Take bottom half */
+  flex: 0 0 50%;           /* Lock bottom half */
+  height: 50%;
   background-size: cover;
   background-position: center;
   border-radius: 0 0 12px 12px;
