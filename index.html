@@ -394,7 +394,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -417,7 +416,7 @@
   .portfolio-slide {
     flex: 0 0 100%;
     display: none;
-    justify-content: space-around;
+    justify-content: center;  /* ✅ center the cards horizontally */
     flex-wrap: wrap;
     gap: 30px;
   }
@@ -428,9 +427,9 @@
 
   .project-card {
     position: relative;
-    width: 100%;
     max-width: 300px;
-    height: 350px;
+    width: 100%;
+    height: auto;             /* ✅ let it adjust height naturally */
     background: white;
     border: 2px solid #0b1c4d;
     border-radius: 12px;
@@ -438,7 +437,7 @@
     color: #0b1c4d;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* ✅ ensure image doesn't spill */
+    overflow: hidden;         /* ✅ keep image inside */
     transition: transform 0.3s ease;
   }
 
@@ -448,25 +447,23 @@
 
   .card-image {
     width: 100%;
-    height: 170px;
+    height: 170px;             /* ✅ fixed height for image */
     background-size: cover;
     background-position: center;
-    border-radius: 12px 12px 0 0; /* ✅ top corners rounded */
     flex-shrink: 0;
   }
 
   .card-content {
-    flex: 1; /* ✅ take up remaining height */
-    padding: 12px 16px;
+    flex: 1;
+    padding: 16px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    text-align: center;
+    text-align: center;        /* ✅ keep text centered */
   }
 
-  /* Image classes (use your own URLs or relative paths) */
+  /* ✅ Your image classes */
   .connect4  { background-image: url('connect4.jpg'); }
   .race      { background-image: url('race.jpg'); }
   .queens    { background-image: url('queens.jpg'); }
