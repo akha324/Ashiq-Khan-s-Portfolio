@@ -33,7 +33,16 @@ function updatePortfolioSlider() {
   const portfolioDots = document.querySelectorAll(".portfolio-dots .dot");
 
   portfolioSlides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === currentPortfolioSlide);
+    if (i === currentPortfolioSlide) {
+      slide.classList.add("active");
+      slide.classList.add("slide-up");
+      // Remove the animation class after it finishes so it can replay next time
+      slide.addEventListener("animationend", () => {
+        slide.classList.remove("slide-up");
+      }, { once: true });
+    } else {
+      slide.classList.remove("active");
+    }
   });
 
   if (portfolioDots.length) {
