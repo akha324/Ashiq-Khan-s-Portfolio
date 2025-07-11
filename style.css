@@ -634,17 +634,16 @@ header {
 }
 
 .portfolio-section {
-  background: #0b1c4d;
-  color: #ffffff;
-  padding: 100px 20px 120px;
+  background-color: #0b1c4d;
+  color: white;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .portfolio-heading {
-  font-size: 3rem;
-  margin: 0 0 60px;
-  font-weight: bold;
-  color: #ffffff;
+  font-size: 3em;
+  color: white;
+  margin-bottom: 40px;
 }
 
 .portfolio-container {
@@ -656,84 +655,51 @@ header {
   margin: 0 auto;
 }
 
-.portfolio-nav {
-  background: none;
-  border: none;
-  font-size: 2.5em;
-  color: #ffffff;
-  cursor: pointer;
-  user-select: none;
-  z-index: 2;
-}
-
 .portfolio-slider {
   display: flex;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 .portfolio-slide {
-  flex: 0 0 100%;
   display: none;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex: 0 0 100%;
+  justify-content: space-around;
   gap: 30px;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .portfolio-slide.active {
   display: flex;
 }
 
-/* ===== PROJECT CARD ===== */
 .project-card {
   position: relative;
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border: 2px solid #0b1c4d;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1 1 30%;
+  min-height: 300px;
+  background-color: white;
   color: #0b1c4d;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: transparent;
+  border-radius: 12px;
+  padding: 40;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 1;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
 }
 
-/* Text bubble */
 .card-content {
   position: relative;
   z-index: 2;
-  background: white; /* ✅ White bubble */
-  padding: 20px;
-  margin: 20px;
-  border-radius: 12px;
-  height: calc(100% - 40px); /* ✅ Bubble stays inside card */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: opacity 0.5s ease;
 }
 
-.card-content h3 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
-}
-
-.card-content p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Image layer covers entire card */
 .card-image {
   position: absolute;
   bottom: -100%;
@@ -742,11 +708,175 @@ header {
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: bottom 0.5s ease;
+  transition: bottom 0.4s ease;
+  z-index: 1;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.project-card:hover .card-image {
+  bottom: 0;
+}
+
+.card-image.connect4 {
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');
+}
+
+.card-image.race {
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.tZdYp3--MOHrWnZ_GRg6IQHaE8&pid=Api');
+}
+
+.card-image.queens {
+  background-image: url('https://miro.medium.com/v2/resize:fit:878/1*419mKEAl_KQej239rT72eg.png');
+}
+
+.card-image.thousand {
+  background-image: url(https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg);
+}
+
+.card-image.count-e {
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvKjB2oTGej1pkYTdqhq2wHaE8&pid=Api');
+}
+
+.card-image.clocks {
+  background-image: url('https://tse1.mm.bing.net/th?id=OIP.dLlnPo6GlWSYdkhOvtDZGwHaL4&pid=Api');
+}
+
+.project-card.empty {
+  background-color: #344e86;
+  color: #d0d0d0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.portfolio-nav {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.portfolio-section {
+  background-color: #0b1c4d;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.portfolio-heading {
+  font-size: 3em;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.portfolio-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.portfolio-slide {
+  display: none;
+  flex: 0 0 100%;
+  justify-content: space-around;
+  gap: 30px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.portfolio-slide.active {
+  display: flex;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1 1 30%;
+  min-height: 300px;
+  background-color: white;
+  color: #0b1c4d;
+  border-radius: 12px;
+  padding: 0;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
   z-index: 1;
 }
 
-/* On hover, slide image up fully */
+.card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px 12px 0 0;
+  padding: 15px 20px;
+  z-index: 2;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Image Slide Hover */
+.card-image {
+  position: absolute;
+  bottom: -100%;
+  left: 10;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: bottom 0.2s ease;
+  z-index: 0;
+  border-radius: 12px;
+}
+
 .project-card:hover .card-image {
   bottom: 0;
+}
+
+.portfolio-nav {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+:root {
+  --navy-blue: #0a1a44;
+  --ocean-blue: #1ca9c9;
 }
