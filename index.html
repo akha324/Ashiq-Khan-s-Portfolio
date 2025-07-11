@@ -374,8 +374,8 @@
 
 <style>
   .portfolio-section {
-    background-color: #0b1c4d; /* Navy blue */
-    color: white;
+    background: #0b1c4d;
+    color: #ffffff;
     padding: 100px 20px 120px;
     text-align: center;
   }
@@ -384,13 +384,14 @@
     font-size: 3rem;
     margin: 0 0 60px;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
   }
 
   .portfolio-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -399,9 +400,10 @@
     background: none;
     border: none;
     font-size: 2.5em;
-    color: white;
+    color: #ffffff;
     cursor: pointer;
     user-select: none;
+    z-index: 2;
   }
 
   .portfolio-slider {
@@ -413,7 +415,7 @@
   .portfolio-slide {
     flex: 0 0 100%;
     display: none;
-    justify-content: center;  /* ✅ center the cards horizontally */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
   }
@@ -422,51 +424,80 @@
     display: flex;
   }
 
+  /* ===== PROJECT CARD ===== */
   .project-card {
     position: relative;
-    max-width: 300px;
     width: 100%;
-    height: auto;             /* ✅ let it adjust height naturally */
-    background: white;
+    max-width: 300px;
+    height: 350px;
     border: 2px solid #0b1c4d;
     border-radius: 12px;
+    overflow: hidden;
     text-decoration: none;
     color: #0b1c4d;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;         /* ✅ keep image inside */
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: transparent;
   }
 
   .project-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
 
-  .card-image {
-    width: 100%;
-    height: 170px;             /* ✅ fixed height for image */
-    background-size: cover;
-    background-position: center;
-    flex-shrink: 0;
-  }
-
+  /* Text bubble */
   .card-content {
-    flex: 1;
-    padding: 16px;
-    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    background: white;                /* ✅ White bubble */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+    height: calc(100% - 40px);        /* ✅ Bubble stays inside card */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;        /* ✅ keep text centered */
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease;
   }
 
-  /* ✅ Your image classes */
-  .connect4  { background-image: url('connect4.jpg'); }
-  .race      { background-image: url('race.jpg'); }
-  .queens    { background-image: url('queens.jpg'); }
-  .thousand  { background-image: url('thousand.jpg'); }
-  .count-e   { background-image: url('count-e.jpg'); }
-  .clocks    { background-image: url('clocks.jpg'); }
+  .card-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+  }
+
+  .card-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* Image layer covers entire card */
+  .card-image {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: bottom 0.5s ease;
+    z-index: 1;
+  }
+
+  /* On hover, slide image up fully */
+  .project-card:hover .card-image {
+    bottom: 0;
+  }
+
+  /* ✅ Example placeholder images — replace with your own! */
+  .connect4 { background-image: url('https://source.unsplash.com/400x400/?boardgame'); }
+  .race     { background-image: url('https://source.unsplash.com/400x400/?race'); }
+  .queens   { background-image: url('https://source.unsplash.com/400x400/?chess'); }
+  .thousand { background-image: url('https://source.unsplash.com/400x400/?numbers'); }
+  .count-e  { background-image: url('https://source.unsplash.com/400x400/?letters'); }
+  .clocks   { background-image: url('https://source.unsplash.com/400x400/?clock'); }
 </style>
 
 <script>
@@ -489,7 +520,6 @@
   slides.forEach(slide => slide.style.display = 'none');
   showSlide(currentSlide);
 </script>
-
 
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="contact-section">
