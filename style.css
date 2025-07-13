@@ -364,7 +364,6 @@ header {
   display: flex;
 }
 
-/* ===== PROJECT CARD ===== */
 .project-card {
   position: relative;
   overflow: hidden;
@@ -372,27 +371,16 @@ header {
   width: 100%;
   max-width: 300px;
   height: 350px;
-  background-color: white;
-  color: #0b1c4d;
+  background-color: #0b1c4d; /* fallback color */
   text-decoration: none;
-  border: 2px solid #0b1c4d;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.card-content {
-  position: relative;
-  z-index: 2;
-  background-color: white;   /* White bubble stays visible */
-  padding: 20px;
-  margin: 20px 20px 0 20px;  /* Top margin only, to align nicely */
-  border-radius: 0 0 12px 12px; /* ✅ Rounded bottom corners only */
-  height: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card-image {
@@ -400,15 +388,27 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 200%;  /* Double height for slide effect */
+  height: 200%;                  /* Make image twice as tall */
   background-size: cover;
   background-position: top;
   z-index: 1;
+  transform: translateY(50%);     /* Start hidden below */
   transition: transform 0.4s ease;
 }
 
 .project-card:hover .card-image {
-  transform: translateY(-50%);
+  transform: translateY(0);       /* Slide up smoothly */
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;                     /* Bubble stays on top */
+  background: white;
+  padding: 20px;
+  border-radius: 12px;            /* All corners rounded */
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 /* Top text area */
@@ -462,26 +462,6 @@ header {
 /* Slide the image up on hover */
 .project-card:hover .card-bottom {
   top: 0;
-}
-
-/* ===== PROJECT CARD ===== */
-.project-card {
-  width: 100%;
-  max-width: 300px;
-  height: 350px;
-  border: 2px solid #0b1c4d;
-  border-radius: 12px;
-  background-color: white;
-  overflow: hidden;
-  text-decoration: none;
-  color: #0b1c4d;
-  transition: transform 0.3s ease;
-  position: relative;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Top half: text */
