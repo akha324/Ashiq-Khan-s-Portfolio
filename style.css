@@ -673,31 +673,40 @@ header {
   display: flex;
 }
 
+/* ============================================
+   ✅ CLEAN PROJECT CARD HOVER SLIDE-UP VERSION
+   ============================================ */
+
 .project-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex: 1 1 30%;
-  min-height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
   background-color: white;
   color: #0b1c4d;
-  border-radius: 12px;
-  padding: 40;
   text-decoration: none;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  z-index: 1;
+  border: 2px solid #0b1c4d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-content {
   position: relative;
   z-index: 2;
+  background-color: white;
+  padding: 20px;
+  height: 100%;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .card-content {
+  opacity: 0;
 }
 
 .card-image {
@@ -708,16 +717,16 @@ header {
   height: 100%;
   background-size: cover;
   background-position: center;
+  border-radius: 12px;
   transition: bottom 0.4s ease;
   z-index: 1;
-  border-radius: 12px;
-  opacity: 0.9;
 }
 
 .project-card:hover .card-image {
   bottom: 0;
 }
 
+/* ✅ Your specific image backgrounds */
 .card-image.connect4 {
   background-image: url('https://tse3.mm.bing.net/th?id=OIP.Prmh9krR1uKwXedgc7eObAHaHe&pid=Api');
 }
@@ -731,7 +740,7 @@ header {
 }
 
 .card-image.thousand {
-  background-image: url(https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg);
+  background-image: url('https://m.media-amazon.com/images/I/71NrbVsuwEL._AC_UF894,1000_QL80_DpWeblab_.jpg');
 }
 
 .card-image.count-e {
