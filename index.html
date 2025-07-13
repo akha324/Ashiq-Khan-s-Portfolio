@@ -516,21 +516,44 @@
   let currentSlide = 0;
   const slides = document.querySelectorAll('.portfolio-slide');
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'flex' : 'none';
-      slide.classList.toggle('active', i === index);
-    });
+  function showSlide(newIndex) {
+    const oldSlide = slides[currentSlide];
+    const newSlide = slides[newIndex];
+
+    // Determine slide direction
+    const isNext = newIndex > currentSlide || (currentSlide === slides.length - 1 && newIndex === 0);
+    const directionOut = isNext ? 'to-left' : 'to-right';
+    const directionIn = isNext ? 'to-right' : 'to-left';
+
+    // Prepare new slide position
+    newSlide.classList.remove('to-left', 'to-right', 'active');
+    newSlide.classList.add(directionIn);
+
+    // Force reflow to apply initial position
+    void newSlide.offsetWidth;
+
+    // Slide out old slide
+    oldSlide.classList.remove('active');
+    oldSlide.classList.add(directionOut);
+
+    // Slide in new slide
+    newSlide.classList.remove(directionIn);
+    newSlide.classList.add('active');
+
+    currentSlide = newIndex;
   }
 
   function slideProjects(direction) {
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    showSlide(currentSlide);
+    const newIndex = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(newIndex);
   }
 
-  // Initialize
-  slides.forEach(slide => slide.style.display = 'none');
-  showSlide(currentSlide);
+  // Initialize slides
+  slides.forEach(slide => {
+    slide.classList.add('to-right'); // position offscreen initially
+  });
+  slides[currentSlide].classList.remove('to-right');
+  slides[currentSlide].classList.add('active');
 </script>
 
 <!-- ========== CONTACT SECTION ========== -->
